@@ -1,13 +1,13 @@
-/* ═══════════════════════════════════════════
-   CARLOS URZOLA — PORTFOLIO
-   main.js — Lee data/data.json y renderiza todo
-═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════
+   CARLOS URZOLA — main.js
+═══════════════════════════════════════ */
 
 fetch('data/data.json')
   .then(r => r.json())
   .then(data => {
     renderHero(data.profile, data.stack);
     renderAbout(data.profile, data.experience);
+    renderFormacion(data.education);
     renderPortfolio(data.projects);
     renderContact(data.profile);
     renderFooter(data.profile);
@@ -21,8 +21,8 @@ fetch('data/data.json')
 // ── HERO ──────────────────────────────────────────────────────
 function renderHero(p, stack) {
   const badges = stack
-    .filter(cat => cat.category !== 'En aprendizaje')
-    .flatMap(cat => cat.items.filter(i => !i.learning))
+    .filter(c => c.category !== 'En aprendizaje')
+    .flatMap(c => c.items.filter(i => !i.learning))
     .map(i => `<span class="hero-badge">${i.name}</span>`)
     .join('');
 
@@ -33,18 +33,12 @@ function renderHero(p, stack) {
     </div>`).join('');
 
   document.getElementById('hero').innerHTML = `
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
     <div class="hero-left">
       ${p.available_for_internship ? `
-      <div class="hero-tag">
-        <span class="dot"></span>
+      <div class="hero-tag"><span class="dot"></span>
         Disponible para prácticas DAM · Open to internship
       </div>` : ''}
-      <h1 class="hero-name">
-        ${p.name.split(' ')[0]}<br />
-        <span>${p.name.split(' ')[1]}</span>
-      </h1>
+      <h1 class="hero-name">${p.name.split(' ')[0]}<br/><span>${p.name.split(' ')[1]}</span></h1>
       <p class="hero-title">${p.title_es}</p>
       <div class="hero-badges">${badges}</div>
       <p class="hero-desc">${p.bio_es}</p>
@@ -64,21 +58,39 @@ function renderHero(p, stack) {
 }
 
 
-// ── ABOUT ─────────────────────────────────────────────────────
+// ── ABOUT + EXPERIENCIA ───────────────────────────────────────
 function renderAbout(p, experience) {
   document.getElementById('about-bio').innerHTML = `
+    <p>${p.bio_es}</p>
     <p>${p.bio_es2}</p>
     <p>${p.bio_es3}</p>
     <div class="hobbies-row">
       ${p.hobbies.map(h => `<span class="hobby-tag">${h}</span>`).join('')}
     </div>`;
 
-  document.getElementById('exp-list').innerHTML = experience.slice(0, 6).map(e => `
-    <div class="exp-item">
+  document.getElementById('exp-list').innerHTML = experience.map(e => `
+    <div class="exp-item reveal">
       <div class="exp-year">${e.period.split('–')[0].trim()}</div>
       <div>
         <div class="exp-role">${e.role_es}</div>
-        <div class="exp-co">${e.company} · ${e.sector_es}</div>
+        <div class="exp-co">${e.company} · ${e.sector_es} · ${e.duration_es}</div>
+        <div class="exp-tags">
+          ${e.tags.map(t => `<span class="exp-tag">${t}</span>`).join('')}
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+
+// ── FORMACIÓN ─────────────────────────────────────────────────
+function renderFormacion(education) {
+  document.getElementById('edu-list').innerHTML = education.map(e => `
+    <div class="edu-item${e.current ? ' current' : ''}">
+      <div class="edu-year">${e.year}</div>
+      <div>
+        <div class="edu-title">${e.title}</div>
+        <div class="edu-institution">${e.institution}</div>
+        <span class="edu-level${e.current ? ' current-badge' : ''}">${e.current ? '📚 En curso — prácticas pendientes' : e.level}</span>
       </div>
     </div>`).join('');
 }
@@ -86,16 +98,8 @@ function renderAbout(p, experience) {
 
 // ── PORTFOLIO ─────────────────────────────────────────────────
 function renderPortfolio(projects) {
-  const statusLabel = {
-    wip:          '🔧 En construcción',
-    live:         '🟢 Live',
-    professional: '💼 Proyecto profesional'
-  };
-  const statusClass = {
-    wip:          'status-wip',
-    live:         'status-live',
-    professional: 'status-professional'
-  };
+  const statusLabel = { wip:'🔧 En construcción', live:'🟢 Live', professional:'💼 Proyecto profesional' };
+  const statusClass = { wip:'status-wip', live:'status-live', professional:'status-professional' };
 
   const cards = projects.map(p => `
     <div class="project-card reveal">
@@ -104,17 +108,13 @@ function renderPortfolio(projects) {
           <div class="project-icon" style="background:${p.icon_bg}">${p.icon}</div>
           <div class="project-links">
             ${p.github ? `<a href="${p.github}" target="_blank" title="GitHub">⌥</a>` : ''}
-            ${p.demo   ? `<a href="${p.demo}"   target="_blank" title="Demo">↗</a>`   : ''}
+            ${p.demo   ? `<a href="${p.demo}"   target="_blank" title="Demo">↗</a>` : ''}
           </div>
         </div>
         <div class="project-title">${p.title}</div>
         <div class="project-desc">${p.desc_es}</div>
-        <div class="project-tags">
-          ${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
-        </div>
-        <span class="project-status ${statusClass[p.status] || 'status-wip'}">
-          ${statusLabel[p.status] || p.status}
-        </span>
+        <div class="project-tags">${p.tags.map(t=>`<span class="project-tag">${t}</span>`).join('')}</div>
+        <span class="project-status ${statusClass[p.status]||'status-wip'}">${statusLabel[p.status]||p.status}</span>
       </div>
     </div>`).join('');
 
@@ -127,8 +127,7 @@ function renderPortfolio(projects) {
     <div class="project-placeholder reveal">
       <div class="project-placeholder-icon">➕</div>
       <h3>Próximo proyecto</h3>
-      <p>Agrégalo en <code style="color:#8ab4f8;font-family:var(--mono);font-size:0.7rem">data/data.json</code>
-      — array <code style="color:#8ab4f8;font-family:var(--mono);font-size:0.7rem">projects[]</code></p>
+      <p>Agrégalo en <code>data/data.json</code> → array <code>projects[]</code></p>
     </div>`;
 
   document.getElementById('projects-grid').innerHTML = cards + placeholders;
@@ -147,7 +146,7 @@ function renderContact(p) {
       <div><div class="cl-label">Teléfono</div><div class="cl-val">${p.phone}</div></div>
     </a>
     <a class="contact-link" href="https://${p.linkedin}" target="_blank">
-      <span class="icon" style="font-family:var(--sans);font-weight:700;font-size:0.8rem">in</span>
+      <span class="icon" style="font-weight:700;font-size:0.85rem">in</span>
       <div><div class="cl-label">LinkedIn</div><div class="cl-val">${p.linkedin.replace('linkedin.com/in/','')}</div></div>
     </a>
     <a class="contact-link" href="https://${p.web}" target="_blank">
@@ -158,7 +157,6 @@ function renderContact(p) {
       <span class="icon">📍</span>
       <div><div class="cl-label">Ubicación</div><div class="cl-val">${p.location}</div></div>
     </div>`;
-
   document.getElementById('cv-download').href = p.cv_file;
 }
 
@@ -176,27 +174,22 @@ function initCursor() {
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursor-ring');
   if (!cursor || !ring) return;
-
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-
-  (function loop() {
-    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+  (function loop(){
+    cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+    rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
     requestAnimationFrame(loop);
   })();
-
   document.addEventListener('mouseover', e => {
-    if (e.target.closest('a, button, .project-card, .hero-badge, .contact-link')) {
-      cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
-      ring.style.opacity = '0';
+    if(e.target.closest('a,button,.project-card,.hero-badge,.contact-link,.exp-item,.edu-item')){
+      cursor.style.transform='translate(-50%,-50%) scale(2.5)'; ring.style.opacity='0';
     }
   });
   document.addEventListener('mouseout', e => {
-    if (e.target.closest('a, button, .project-card, .hero-badge, .contact-link')) {
-      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-      ring.style.opacity = '1';
+    if(e.target.closest('a,button,.project-card,.hero-badge,.contact-link,.exp-item,.edu-item')){
+      cursor.style.transform='translate(-50%,-50%) scale(1)'; ring.style.opacity='1';
     }
   });
 }
@@ -205,8 +198,8 @@ function initCursor() {
 // ── SCROLL REVEAL ─────────────────────────────────────────────
 function initScrollReveal() {
   const obs = new IntersectionObserver(
-    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.08 }
+    es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.07 }
   );
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
@@ -216,14 +209,9 @@ function initScrollReveal() {
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const links    = document.querySelectorAll('.nav-links a');
-
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    links.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  }, { passive: true });
+    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) current = s.id; });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+current));
+  }, { passive:true });
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div class="cursor"      id="cursor"></div>
+  <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
   <nav>
@@ -17,59 +17,59 @@
     <div class="nav-links">
       <a href="#hero">Inicio</a>
       <a href="#about">Sobre mí</a>
+      <a href="#formacion">Formación</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contacto</a>
     </div>
   </nav>
 
-  <section id="hero">
-    <!-- renderHero() -->
-  </section>
+  <!-- HERO -->
+  <section id="hero"></section>
 
+  <!-- SOBRE MÍ + EXPERIENCIA -->
   <section id="about">
     <div class="about-text">
-      <div class="section-label reveal">Sobre mí · About</div>
-      <h2 class="section-title reveal">
-        Consultor que<br />
-        <em style="font-style:italic;color:var(--accent)">también programa</em>
-      </h2>
+      <div class="section-label reveal">Sobre mí</div>
+      <h2 class="section-title reveal">Consultor que<br /><em>también programa</em></h2>
       <div id="about-bio" class="reveal"></div>
     </div>
     <div>
-      <div class="section-label reveal" style="margin-bottom:1.5rem">Experiencia</div>
-      <div class="exp-list reveal" id="exp-list"></div>
+      <div class="section-label reveal" style="margin-bottom:1.5rem">Experiencia laboral</div>
+      <div class="exp-list" id="exp-list"></div>
     </div>
   </section>
 
+  <!-- FORMACIÓN -->
+  <section id="formacion">
+    <div class="section-label reveal">Formación</div>
+    <h2 class="section-title reveal">Estudios <em>&amp;</em> cursos</h2>
+    <div id="edu-list" class="edu-list reveal"></div>
+  </section>
+
+  <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="portfolio-header">
       <div>
         <div class="section-label reveal">Portfolio</div>
         <h2 class="section-title reveal" style="margin-bottom:0">Proyectos</h2>
       </div>
-      <p class="reveal">
-        Iré agregando proyectos a medida que los construya.<br />
-        Para añadir uno: edita
-        <code style="font-family:var(--mono);color:#8ab4f8;font-size:0.76rem">data/data.json</code>
-      </p>
+      <p class="reveal">Iré agregando proyectos a medida que los construya.<br />
+      Edita <code>data/data.json</code> → array <code>projects[]</code></p>
     </div>
     <div class="projects-grid" id="projects-grid"></div>
   </section>
 
+  <!-- CONTACTO -->
   <section id="contact">
     <div class="reveal">
       <h2 class="contact-headline">¿Hablamos<br /><em>juntos?</em></h2>
-      <p class="contact-sub">
-        Busco prácticas de empresa para completar el DAM.<br />
-        También abierto a colaboraciones o proyectos freelance.
-      </p>
+      <p class="contact-sub">Busco prácticas de empresa para completar el DAM.<br />También abierto a colaboraciones o proyectos freelance.</p>
       <a class="btn-primary" id="cv-download" href="#" download>↓ Descargar CV</a>
     </div>
     <div class="contact-links reveal" id="contact-links"></div>
   </section>
 
   <footer id="footer"></footer>
-
   <script src="js/main.js"></script>
 </body>
 </html>
