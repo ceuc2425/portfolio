@@ -9,8 +9,8 @@
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
     "bio_es": "Soy colombiano viviendo en España, con más de 10 años de experiencia como consultor funcional y desarrollador. Mi perfil mezcla lo técnico con lo analítico: sé levantar requisitos, diseñar bases de datos, hacer UX y también escribir el código.",
-    "bio_es2": "He trabajado en inmobiliaria, nómina, ERP y hostelería, tanto en Colombia como en España. Actualmente finalizando el CFGS DAM actualizando mis skills al stack moderno: Node.js, TypeScript, Flutter, Docker y despliegue total en VPS.",
-    "bio_es3": "Busco prácticas de empresa para completar el ciclo y seguir aportando experiencia real desde el primer día.",
+    "bio_es2": "He trabajado en inmobiliaria, nómina, ERP y hostelería, en Colombia y España. Finalizando el CFGS DAM con foco en Java, Spring Boot, JavaScript, Node.js, TypeScript y APIs REST. También he tocado C#, Flutter y MongoDB — lenguajes en los que no me pierdo y donde la curva de adaptación sería mínima.",
+    "bio_es3": "Busco prácticas de empresa para completar el ciclo. Prefiero trabajo remoto aunque tengo disponibilidad para desplazarme si fuera necesario.",
     "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
     "available_for_internship": true,
     "cv_file": "Carlos_Urzola_CV_2024.docx",
@@ -37,10 +37,11 @@
       "category": "Backend",
       "color": "#34d399",
       "items": [
-        { "name": "Node.js",     "learning": false },
         { "name": "Java",        "learning": false },
         { "name": "Spring Boot", "learning": false },
-        { "name": "Thymeleaf",   "learning": false },
+        { "name": "Node.js",     "learning": false },
+        { "name": "TypeScript",  "learning": false },
+        { "name": "REST APIs",   "learning": false },
         { "name": "C#",          "learning": false }
       ]
     },
@@ -115,7 +116,7 @@
       "duration_en": "38 months",
       "desc_es": "Diseño y desarrollo del CRM interno con HTML5, CSS3, SASS, JS (jQuery, Bootstrap), PHP y MySQL. Responsable de contratos, gestión de alquileres, presupuestos de reforma, contratación de personal de obra, captación y cierre de ventas, fidelización de propietarios.",
       "desc_en": "Designed and developed the internal CRM using HTML5, CSS3, SASS, JS (jQuery, Bootstrap), PHP and MySQL. Managed contracts, rental operations, renovation budgets, construction staff hiring, property acquisition, sales closing, and owner retention.",
-      "tags": ["HTML5", "CSS3", "JS", "PHP", "MySQL", "CRM"]
+      "tags": ["HTML5", "CSS3", "JavaScript", "Node.js", "MongoDB", "MySQL", "Gestión BD", "CRM"]
     },
     {
       "id": "solmar",
@@ -129,7 +130,7 @@
       "duration_en": "12 months",
       "desc_es": "Gestión de web y CRM, coordinación con agencias de marketing, diseño de imagen corporativa (banners, carteles, trípticos), captación de obra nueva y segunda mano, gestión de demandas, trámites de preventa/postventa.",
       "desc_en": "Web and CRM management, coordination with marketing agencies, corporate image design (banners, posters, brochures), new build and resale property acquisition, demand management, pre/post-sale procedures.",
-      "tags": ["CRM", "Marketing", "Diseño gráfico", "Ventas"]
+      "tags": ["CRM", "Gestión BD", "Marketing", "Diseño gráfico", "Ventas"]
     },
     {
       "id": "nexo",
@@ -143,7 +144,7 @@
       "duration_en": "3 months",
       "desc_es": "Mantenimiento web, administración CRM, exportación XML a portales, captación de propiedades, gestión de alquileres y demandas de venta.",
       "desc_en": "Web maintenance, CRM administration, XML export to listing portals, property acquisition, rental and sales demand management.",
-      "tags": ["CRM", "XML", "Web", "Ventas"]
+      "tags": ["CRM", "XML", "Gestión BD", "Web", "Ventas"]
     },
     {
       "id": "masian",
@@ -157,7 +158,7 @@
       "duration_en": "12 months",
       "desc_es": "Reparación y venta de equipos informáticos, diseño de webs estáticas/dinámicas con HTML5, CSS3, SASS, WordPress, servicios de marketing y posicionamiento.",
       "desc_en": "Repair and sale of IT equipment, static/dynamic website design using HTML5, CSS3, SASS, WordPress, marketing and SEO services.",
-      "tags": ["HTML5", "CSS3", "SASS", "WordPress", "SEO"]
+      "tags": ["HTML5", "CSS3", "SASS", "JavaScript", "WordPress", "Gestión BD", "SEO"]
     },
     {
       "id": "dinamics",
@@ -171,7 +172,7 @@
       "duration_en": "6 months",
       "desc_es": "Implementación, capacitación y apoyo en ventas del software de nómina, levantamiento de requerimientos, soporte y visitas a clientes.",
       "desc_en": "Implementation, training and sales support for payroll software, requirements gathering, customer support and site visits.",
-      "tags": ["MS Dynamics", "Nómina", "Consultoría", "ERP"]
+      "tags": ["MS Dynamics", "C#", "Gestión BD", "Nómina", "Consultoría", "ERP"]
     },
     {
       "id": "cenet",
@@ -185,7 +186,7 @@
       "duration_en": "6 months",
       "desc_es": "Gestión de bases de datos SQL/MySQL, documentación ISO, diseño UX/UI (Visio, Balsamiq, Illustrator, Photoshop), análisis funcional de software de facturación electrónica y nómina, casos de uso, casos de prueba, apoyo en liquidación de nómina de más de 20.000 empleados.",
       "desc_en": "SQL/MySQL database management, ISO documentation, UX/UI design (Visio, Balsamiq, Illustrator, Photoshop), functional analysis for e-invoicing and payroll software, use cases, test cases, and payroll support for 20,000+ employees.",
-      "tags": ["SQL", "MySQL", "UX/UI", "UML", "ISO", "Nómina"]
+      "tags": ["SQL", "MySQL", "Gestión BD", "UX/UI", "UML", "ISO", "Análisis Funcional"]
     },
     {
       "id": "systems",
@@ -199,7 +200,7 @@
       "duration_en": "12 months",
       "desc_es": "Soporte y consultoría del software de nómina, implementación a nuevos clientes, detección de bugs, liquidación de nómina de más de 1.000 empleados, diseño de interfaces HTML/CSS.",
       "desc_en": "Payroll software support and consulting, new client implementation, bug detection, payroll calculation for 1,000+ employees, HTML/CSS interface design.",
-      "tags": ["SQL", "HTML", "CSS", "Nómina", "Consultoría"]
+      "tags": ["SQL", "HTML", "CSS", "Gestión BD", "Nómina", "Consultoría"]
     },
     {
       "id": "pizza1969",
@@ -213,7 +214,7 @@
       "duration_en": "6 months",
       "desc_es": "Selección, contratación y capacitación de personal, liquidación de nómina por centros de costo, gestión de vacaciones, licencias, despidos. Logro: redactó e implementó el reglamento interno mejorando la organización en un 100%.",
       "desc_en": "Staff recruitment, hiring and training, payroll calculation by cost centre, vacation/leave/dismissal management. Achievement: authored and implemented internal regulations, improving company organisation by 100%.",
-      "tags": ["RRHH", "Nómina", "Gestión de personal"]
+      "tags": ["RRHH", "Nómina", "Gestión BD", "Gestión de personal"]
     },
     {
       "id": "efectividad",
@@ -227,7 +228,7 @@
       "duration_en": "3 months",
       "desc_es": "Liquidación de nómina y parafiscales para empresas con más de 1.500 empleados (colectivas, públicas y privadas), cálculo de impuestos, retenciones procedimiento 1 y 2.",
       "desc_en": "Payroll and parafiscal calculations for companies with 1,500+ employees (collective, public and private), tax and withholding calculations (procedures 1 & 2).",
-      "tags": ["Nómina", "Parafiscales", "Impuestos"]
+      "tags": ["Nómina", "Gestión BD", "Parafiscales", "Impuestos"]
     }
   ],
 
