@@ -1,14 +1,12 @@
 /* ═══════════════════════════════════════════
    CARLOS URZOLA — PORTFOLIO
-   main.js  — Lee data/data.json y renderiza todo
+   main.js — Lee data/data.json y renderiza todo
 ═══════════════════════════════════════════ */
 
-// ── Fetch data and boot ──────────────────────────────────────
 fetch('data/data.json')
   .then(r => r.json())
   .then(data => {
-    renderHero(data.profile);
-    renderStack(data.stack);
+    renderHero(data.profile, data.stack);
     renderAbout(data.profile, data.experience);
     renderPortfolio(data.projects);
     renderContact(data.profile);
@@ -20,9 +18,15 @@ fetch('data/data.json')
   .catch(err => console.error('Error cargando data.json:', err));
 
 
-// ── HERO ────────────────────────────────────────────────────
-function renderHero(p) {
-  const statsHTML = p.stats.map(s => `
+// ── HERO ──────────────────────────────────────────────────────
+function renderHero(p, stack) {
+  const badges = stack
+    .filter(cat => cat.category !== 'En aprendizaje')
+    .flatMap(cat => cat.items.filter(i => !i.learning))
+    .map(i => `<span class="hero-badge">${i.name}</span>`)
+    .join('');
+
+  const stats = p.stats.map(s => `
     <div class="stat-card">
       <div class="stat-num">${s.num}</div>
       <div class="stat-label">${s.label}</div>
@@ -31,71 +35,45 @@ function renderHero(p) {
   document.getElementById('hero').innerHTML = `
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
-
     <div class="hero-left">
       ${p.available_for_internship ? `
       <div class="hero-tag">
         <span class="dot"></span>
         Disponible para prácticas DAM · Open to internship
       </div>` : ''}
-
       <h1 class="hero-name">
         ${p.name.split(' ')[0]}<br />
         <span>${p.name.split(' ')[1]}</span>
       </h1>
       <p class="hero-title">${p.title_es}</p>
-      <p class="hero-desc">
-        +10 años combinando análisis funcional, UX y desarrollo de software.
-        Experiencia real en sector inmobiliario, nómina y ERP.
-        Construyendo con el stack moderno: Node, TypeScript, Flutter, Docker.
-      </p>
+      <div class="hero-badges">${badges}</div>
+      <p class="hero-desc">${p.bio_es}</p>
       <div class="hero-cta">
         <a class="btn-primary" href="${p.cv_file}" download>↓ Descargar CV</a>
         <a class="btn-outline" href="#portfolio">Ver proyectos →</a>
       </div>
     </div>
-
     <div class="hero-right">
-      ${statsHTML}
+      ${stats}
       ${p.available_for_internship ? `
       <div class="available-badge">
         <div class="label">🎓 Prácticas DAM</div>
-        <div class="value">Disponible ahora · Alicante / Remoto</div>
+        <div class="value">Disponible · Alicante / Remoto</div>
       </div>` : ''}
     </div>`;
 }
 
 
-// ── STACK ───────────────────────────────────────────────────
-function renderStack(stack) {
-  const cats = stack.map(cat => `
-    <div class="stack-cat">
-      <div class="stack-cat-name" style="color:${cat.color}">${cat.category}</div>
-      <div class="stack-items">
-        ${cat.items.map(i => `
-          <span class="stack-item${i.learning ? ' learning' : ''}">${i.name}</span>
-        `).join('')}
-      </div>
-    </div>`).join('');
-
-  document.getElementById('stack-grid').innerHTML = cats;
-}
-
-
-// ── ABOUT ───────────────────────────────────────────────────
+// ── ABOUT ─────────────────────────────────────────────────────
 function renderAbout(p, experience) {
-  // Bio
   document.getElementById('about-bio').innerHTML = `
-    <p>${p.bio_es}</p>
     <p>${p.bio_es2}</p>
     <p>${p.bio_es3}</p>
     <div class="hobbies-row">
       ${p.hobbies.map(h => `<span class="hobby-tag">${h}</span>`).join('')}
     </div>`;
 
-  // Experience timeline (last 6 entries in sidebar)
-  const recent = experience.slice(0, 6);
-  document.getElementById('exp-list').innerHTML = recent.map(e => `
+  document.getElementById('exp-list').innerHTML = experience.slice(0, 6).map(e => `
     <div class="exp-item">
       <div class="exp-year">${e.period.split('–')[0].trim()}</div>
       <div>
@@ -106,12 +84,18 @@ function renderAbout(p, experience) {
 }
 
 
-// ── PORTFOLIO ───────────────────────────────────────────────
+// ── PORTFOLIO ─────────────────────────────────────────────────
 function renderPortfolio(projects) {
-  const grid = document.getElementById('projects-grid');
-
-  const statusLabel = { wip: '🔧 En construcción', live: '🟢 Live', professional: '💼 Proyecto profesional' };
-  const statusClass = { wip: 'status-wip', live: 'status-live', professional: 'status-professional' };
+  const statusLabel = {
+    wip:          '🔧 En construcción',
+    live:         '🟢 Live',
+    professional: '💼 Proyecto profesional'
+  };
+  const statusClass = {
+    wip:          'status-wip',
+    live:         'status-live',
+    professional: 'status-professional'
+  };
 
   const cards = projects.map(p => `
     <div class="project-card reveal">
@@ -134,61 +118,60 @@ function renderPortfolio(projects) {
       </div>
     </div>`).join('');
 
-  // Always show placeholder cards to invite adding more
   const placeholders = `
     <div class="project-placeholder reveal">
       <div class="project-placeholder-icon">🚧</div>
       <h3>Proyecto Final DAM</h3>
-      <p>En construcción.<br/>Stack: Flutter · Node.js · PostgreSQL · Docker</p>
+      <p>En construcción.<br/>Java · Spring Boot · Flutter · MongoDB · Docker</p>
     </div>
-    <div class="project-placeholder reveal" style="border-color:rgba(110,231,183,0.2);">
+    <div class="project-placeholder reveal">
       <div class="project-placeholder-icon">➕</div>
       <h3>Próximo proyecto</h3>
-      <p>Agrégalo en <code style="color:var(--accent2);font-family:var(--mono);font-size:0.72rem">data/data.json</code><br/>dentro del array <code style="color:var(--accent2);font-family:var(--mono);font-size:0.72rem">projects[]</code></p>
+      <p>Agrégalo en <code style="color:#8ab4f8;font-family:var(--mono);font-size:0.7rem">data/data.json</code>
+      — array <code style="color:#8ab4f8;font-family:var(--mono);font-size:0.7rem">projects[]</code></p>
     </div>`;
 
-  grid.innerHTML = cards + placeholders;
+  document.getElementById('projects-grid').innerHTML = cards + placeholders;
 }
 
 
-// ── CONTACT ─────────────────────────────────────────────────
+// ── CONTACT ───────────────────────────────────────────────────
 function renderContact(p) {
   document.getElementById('contact-links').innerHTML = `
     <a class="contact-link" href="mailto:${p.email}">
       <span class="icon">✉</span>
       <div><div class="cl-label">Email</div><div class="cl-val">${p.email}</div></div>
     </a>
-    <a class="contact-link" href="tel:${p.phone.replace(/\s|-/g,'')}">
+    <a class="contact-link" href="tel:${p.phone.replace(/[\s-]/g,'')}">
       <span class="icon">📱</span>
       <div><div class="cl-label">Teléfono</div><div class="cl-val">${p.phone}</div></div>
     </a>
     <a class="contact-link" href="https://${p.linkedin}" target="_blank">
-      <span class="icon" style="font-weight:700;font-size:0.85rem">in</span>
+      <span class="icon" style="font-family:var(--sans);font-weight:700;font-size:0.8rem">in</span>
       <div><div class="cl-label">LinkedIn</div><div class="cl-val">${p.linkedin.replace('linkedin.com/in/','')}</div></div>
     </a>
     <a class="contact-link" href="https://${p.web}" target="_blank">
       <span class="icon">🌐</span>
       <div><div class="cl-label">Web</div><div class="cl-val">${p.web}</div></div>
     </a>
-    <div class="contact-link" style="opacity:0.45;pointer-events:none;">
+    <div class="contact-link" style="opacity:0.4;pointer-events:none;">
       <span class="icon">📍</span>
       <div><div class="cl-label">Ubicación</div><div class="cl-val">${p.location}</div></div>
     </div>`;
 
-  // CV download button
   document.getElementById('cv-download').href = p.cv_file;
 }
 
 
-// ── FOOTER ──────────────────────────────────────────────────
+// ── FOOTER ────────────────────────────────────────────────────
 function renderFooter(p) {
   document.getElementById('footer').innerHTML = `
     <span>© ${new Date().getFullYear()} ${p.name}</span>
-    <span>Hecho con HTML · CSS · JS puro — sin frameworks 🚀</span>`;
+    <span>HTML · CSS · JS — sin frameworks 🚀</span>`;
 }
 
 
-// ── CURSOR ──────────────────────────────────────────────────
+// ── CURSOR ────────────────────────────────────────────────────
 function initCursor() {
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursor-ring');
@@ -197,21 +180,21 @@ function initCursor() {
   let mx = 0, my = 0, rx = 0, ry = 0;
   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 
-  (function animCursor() {
+  (function loop() {
     cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
     rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
     ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(animCursor);
+    requestAnimationFrame(loop);
   })();
 
   document.addEventListener('mouseover', e => {
-    if (e.target.closest('a, button, .project-card, .stack-item, .contact-link')) {
+    if (e.target.closest('a, button, .project-card, .hero-badge, .contact-link')) {
       cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
       ring.style.opacity = '0';
     }
   });
   document.addEventListener('mouseout', e => {
-    if (e.target.closest('a, button, .project-card, .stack-item, .contact-link')) {
+    if (e.target.closest('a, button, .project-card, .hero-badge, .contact-link')) {
       cursor.style.transform = 'translate(-50%,-50%) scale(1)';
       ring.style.opacity = '1';
     }
@@ -219,30 +202,28 @@ function initCursor() {
 }
 
 
-// ── SCROLL REVEAL ───────────────────────────────────────────
+// ── SCROLL REVEAL ─────────────────────────────────────────────
 function initScrollReveal() {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
 
-// ── ACTIVE NAV ──────────────────────────────────────────────
+// ── ACTIVE NAV ────────────────────────────────────────────────
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const links    = document.querySelectorAll('.nav-links a');
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => a.classList.remove('active'));
-        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
     });
-  }, { rootMargin: '-40% 0px -40% 0px' });
-
-  sections.forEach(s => obs.observe(s));
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
 }
