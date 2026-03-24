@@ -5,7 +5,7 @@
     "title_en": "Functional Consultant & Fullstack Developer",
     "email": "carlosxcrew@gmail.com",
     "phone": "+34 631-613-983",
-    "web": "www.carlosurzola.com",
+    "web": "https://carlos-urzola.netlify.app/",
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
     "bio_es": "Soy colombiano viviendo en España, con más de 10 años de experiencia como consultor funcional y desarrollador. Mi perfil mezcla lo técnico con lo analítico: sé levantar requisitos, diseñar bases de datos, hacer UX y también escribir el código.",
@@ -13,7 +13,7 @@
     "bio_es3": "Busco prácticas de empresa para completar el ciclo. Prefiero trabajo remoto aunque tengo disponibilidad para desplazarme si fuera necesario.",
     "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
     "available_for_internship": true,
-    "cv_file": "Carlos_Urzola_CV_2024.docx",
+    "cv_file": "Carlos_Urzola_CV_2026.pdf",
     "stats": [
       { "num": "10+", "label": "años de experiencia" },
       { "num": "8",   "label": "empresas — sectores" }
@@ -233,18 +233,7 @@
   ],
 
   "projects": [
-    {
-      "id": "crm-viva",
-      "title": "CRM Inmobiliario — Viva Spain",
-      "desc_es": "CRM interno desarrollado desde cero para gestionar captación y venta de propiedades. Incluye ficha de propiedades, gestión de clientes y seguimiento de ventas.",
-      "desc_en": "Internal CRM built from scratch to manage property acquisition and sales. Includes property cards, client management and sales tracking.",
-      "icon": "🏠",
-      "icon_bg": "#1e3a2f",
-      "tags": ["HTML5", "SASS", "JavaScript", "PHP", "MySQL"],
-      "github": "",
-      "demo": "",
-      "status": "professional"
-    }
+  
   ],
 
   "education": [
