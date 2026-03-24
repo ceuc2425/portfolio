@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Urzola — Dev & Consultor Funcional</title>
+  <meta name="description" content="Portfolio de Carlos Urzola — Consultor Funcional y Desarrollador Fullstack. +10 años de experiencia. Disponible para prácticas DAM." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor"      id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">cu.dev</span>
+    <div class="nav-links">
+      <a href="#hero">Inicio</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <!-- renderHero() -->
+  </section>
+
+  <!-- ── STACK ── -->
+  <section id="stack">
+    <div class="section-label reveal">Stack tecnológico</div>
+    <h2 class="section-title reveal">Herramientas <span style="color:var(--muted)">&amp;</span> tecnologías</h2>
+    <div class="stack-grid reveal" id="stack-grid">
+      <!-- renderStack() -->
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="about-text">
+      <div class="section-label reveal">Sobre mí · About</div>
+      <h2 class="section-title reveal" style="margin-bottom:1.5rem">
+        Consultor que<br />
+        <em style="font-family:var(--serif);font-style:italic;color:var(--accent)">también programa</em>
+      </h2>
+      <div id="about-bio" class="reveal">
+        <!-- renderAbout() -->
+      </div>
+    </div>
+    <div class="exp-list reveal" id="exp-list">
+      <!-- renderAbout() -->
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO ── -->
+  <section id="portfolio">
+    <div class="portfolio-header">
+      <div>
+        <div class="section-label reveal">Portfolio</div>
+        <h2 class="section-title reveal" style="margin-bottom:0">Proyectos</h2>
+      </div>
+      <p class="reveal">
+        Aquí iré agregando proyectos a medida que los construya.<br />
+        Para añadir uno: edita <code style="font-family:var(--mono);color:var(--accent2);font-size:0.78rem">data/data.json</code>
+      </p>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <!-- renderPortfolio() -->
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="reveal">
+      <h2 class="contact-headline">¿Hablamos<br /><em>juntos?</em></h2>
+      <p class="contact-sub">
+        Busco prácticas de empresa para completar el DAM.<br />
+        También abierto a colaboraciones, proyectos freelance o charlar de tecnología.
+      </p>
+      <a class="btn-primary" id="cv-download" href="#" download>↓ Descargar CV completo</a>
+    </div>
+    <div class="contact-links reveal" id="contact-links">
+      <!-- renderContact() -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <!-- renderFooter() -->
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
