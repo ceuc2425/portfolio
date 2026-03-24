@@ -50,7 +50,8 @@
       "color": "#f472b6",
       "items": [
         { "name": "Flutter", "learning": false },
-        { "name": "Dart",    "learning": false }
+        { "name": "Dart",    "learning": false },
+        { "name": "Android Studio", "learning": false }
       ]
     },
     {
@@ -87,10 +88,10 @@
       "category": "Diseño & UX",
       "color": "#f9a8d4",
       "items": [
-        { "name": "Figma",      "learning": false },
-        { "name": "Illustrator","learning": false },
-        { "name": "UML / Visio","learning": false },
-        { "name": "Balsamiq",   "learning": false }
+        { "name": "Figma",       "learning": false },
+        { "name": "Illustrator", "learning": false },
+        { "name": "UML / Visio", "learning": false },
+        { "name": "Balsamiq",    "learning": false }
       ]
     },
     {
@@ -114,9 +115,9 @@
       "period": "03/2019 – 04/2022",
       "duration_es": "38 meses",
       "duration_en": "38 months",
-      "desc_es": "Diseño y desarrollo del CRM interno con HTML5, CSS3, SASS, JS (jQuery, Bootstrap), PHP y MySQL. Responsable de contratos, gestión de alquileres, presupuestos de reforma, contratación de personal de obra, captación y cierre de ventas, fidelización de propietarios.",
-      "desc_en": "Designed and developed the internal CRM using HTML5, CSS3, SASS, JS (jQuery, Bootstrap), PHP and MySQL. Managed contracts, rental operations, renovation budgets, construction staff hiring, property acquisition, sales closing, and owner retention.",
-      "tags": ["HTML5", "CSS3", "JavaScript", "Node.js", "MongoDB", "MySQL", "Gestión BD", "CRM"]
+      "desc_es": "Diseño y desarrollo del CRM interno. Gestión de contratos, alquileres, presupuestos de reforma, contratación de personal de obra, captación y cierre de ventas, fidelización de propietarios.",
+      "desc_en": "Designed and developed the internal CRM. Managed contracts, rental operations, renovation budgets, construction staff hiring, property acquisition, sales closing, and owner retention.",
+      "tags": ["HTML5", "CSS3", "JavaScript", "Node.js", "MySQL", "MongoDB", "Gestión BD", "CRM"]
     },
     {
       "id": "solmar",
@@ -128,8 +129,8 @@
       "period": "02/2018 – 02/2019",
       "duration_es": "12 meses",
       "duration_en": "12 months",
-      "desc_es": "Gestión de web y CRM, coordinación con agencias de marketing, diseño de imagen corporativa (banners, carteles, trípticos), captación de obra nueva y segunda mano, gestión de demandas, trámites de preventa/postventa.",
-      "desc_en": "Web and CRM management, coordination with marketing agencies, corporate image design (banners, posters, brochures), new build and resale property acquisition, demand management, pre/post-sale procedures.",
+      "desc_es": "Gestión de web y CRM, imagen corporativa, captación de propiedades, trámites de preventa/postventa.",
+      "desc_en": "Web and CRM management, corporate image design, property acquisition, pre/post-sale procedures.",
       "tags": ["CRM", "Gestión BD", "Marketing", "Diseño gráfico", "Ventas"]
     },
     {
@@ -142,9 +143,9 @@
       "period": "11/2017 – 02/2018",
       "duration_es": "3 meses",
       "duration_en": "3 months",
-      "desc_es": "Mantenimiento web, administración CRM, exportación XML a portales, captación de propiedades, gestión de alquileres y demandas de venta.",
-      "desc_en": "Web maintenance, CRM administration, XML export to listing portals, property acquisition, rental and sales demand management.",
-      "tags": ["CRM", "XML", "Gestión BD", "Web", "Ventas"]
+      "desc_es": "Mantenimiento web, administración CRM, exportación XML a portales, captación de propiedades.",
+      "desc_en": "Web maintenance, CRM administration, XML export to listing portals, property acquisition.",
+      "tags": ["CRM", "XML", "Gestión BD", "Web"]
     },
     {
       "id": "masian",
@@ -156,8 +157,8 @@
       "period": "11/2016 – 11/2017",
       "duration_es": "12 meses",
       "duration_en": "12 months",
-      "desc_es": "Reparación y venta de equipos informáticos, diseño de webs estáticas/dinámicas con HTML5, CSS3, SASS, WordPress, servicios de marketing y posicionamiento.",
-      "desc_en": "Repair and sale of IT equipment, static/dynamic website design using HTML5, CSS3, SASS, WordPress, marketing and SEO services.",
+      "desc_es": "Webs estáticas/dinámicas, WordPress, marketing digital y posicionamiento SEO.",
+      "desc_en": "Static/dynamic websites, WordPress, digital marketing and SEO.",
       "tags": ["HTML5", "CSS3", "SASS", "JavaScript", "WordPress", "Gestión BD", "SEO"]
     },
     {
@@ -170,9 +171,9 @@
       "period": "12/2015 – 06/2016",
       "duration_es": "6 meses",
       "duration_en": "6 months",
-      "desc_es": "Implementación, capacitación y apoyo en ventas del software de nómina, levantamiento de requerimientos, soporte y visitas a clientes.",
-      "desc_en": "Implementation, training and sales support for payroll software, requirements gathering, customer support and site visits.",
-      "tags": ["MS Dynamics", "C#", "Gestión BD", "Nómina", "Consultoría", "ERP"]
+      "desc_es": "Implementación y soporte del software de nómina. Levantamiento de requerimientos y visitas a clientes.",
+      "desc_en": "Payroll software implementation and support. Requirements gathering and client visits.",
+      "tags": ["MS Dynamics", "C#", "Gestión BD", "ERP", "Nómina"]
     },
     {
       "id": "cenet",
@@ -184,8 +185,8 @@
       "period": "05/2015 – 11/2015",
       "duration_es": "6 meses",
       "duration_en": "6 months",
-      "desc_es": "Gestión de bases de datos SQL/MySQL, documentación ISO, diseño UX/UI (Visio, Balsamiq, Illustrator, Photoshop), análisis funcional de software de facturación electrónica y nómina, casos de uso, casos de prueba, apoyo en liquidación de nómina de más de 20.000 empleados.",
-      "desc_en": "SQL/MySQL database management, ISO documentation, UX/UI design (Visio, Balsamiq, Illustrator, Photoshop), functional analysis for e-invoicing and payroll software, use cases, test cases, and payroll support for 20,000+ employees.",
+      "desc_es": "Gestión BD SQL/MySQL, documentación ISO, diseño UX/UI, análisis funcional de facturación electrónica y nómina, casos de uso y prueba. Soporte nómina +20.000 empleados.",
+      "desc_en": "SQL/MySQL DB management, ISO documentation, UX/UI design, functional analysis for e-invoicing and payroll. Support for 20,000+ employee payroll.",
       "tags": ["SQL", "MySQL", "Gestión BD", "UX/UI", "UML", "ISO", "Análisis Funcional"]
     },
     {
@@ -198,9 +199,9 @@
       "period": "10/2013 – 11/2014",
       "duration_es": "12 meses",
       "duration_en": "12 months",
-      "desc_es": "Soporte y consultoría del software de nómina, implementación a nuevos clientes, detección de bugs, liquidación de nómina de más de 1.000 empleados, diseño de interfaces HTML/CSS.",
-      "desc_en": "Payroll software support and consulting, new client implementation, bug detection, payroll calculation for 1,000+ employees, HTML/CSS interface design.",
-      "tags": ["SQL", "HTML", "CSS", "Gestión BD", "Nómina", "Consultoría"]
+      "desc_es": "Soporte del software de nómina, implementación a clientes, detección de bugs. Nómina +1.000 empleados.",
+      "desc_en": "Payroll software support, client implementation, bug detection. Payroll for 1,000+ employees.",
+      "tags": ["SQL", "HTML", "CSS", "Gestión BD", "Nómina"]
     },
     {
       "id": "pizza1969",
@@ -212,9 +213,9 @@
       "period": "04/2013 – 10/2013",
       "duration_es": "6 meses",
       "duration_en": "6 months",
-      "desc_es": "Selección, contratación y capacitación de personal, liquidación de nómina por centros de costo, gestión de vacaciones, licencias, despidos. Logro: redactó e implementó el reglamento interno mejorando la organización en un 100%.",
-      "desc_en": "Staff recruitment, hiring and training, payroll calculation by cost centre, vacation/leave/dismissal management. Achievement: authored and implemented internal regulations, improving company organisation by 100%.",
-      "tags": ["RRHH", "Nómina", "Gestión BD", "Gestión de personal"]
+      "desc_es": "Selección y contratación de personal, nómina por centros de costo. Logro: reglamento interno que mejoró la organización un 100%.",
+      "desc_en": "Staff recruitment and payroll by cost centre. Achievement: internal regulations that improved organisation by 100%.",
+      "tags": ["RRHH", "Nómina", "Gestión BD"]
     },
     {
       "id": "efectividad",
@@ -226,18 +227,23 @@
       "period": "01/2013 – 04/2013",
       "duration_es": "3 meses",
       "duration_en": "3 months",
-      "desc_es": "Liquidación de nómina y parafiscales para empresas con más de 1.500 empleados (colectivas, públicas y privadas), cálculo de impuestos, retenciones procedimiento 1 y 2.",
-      "desc_en": "Payroll and parafiscal calculations for companies with 1,500+ employees (collective, public and private), tax and withholding calculations (procedures 1 & 2).",
+      "desc_es": "Nómina y parafiscales para empresas +1.500 empleados. Impuestos y retenciones procedimiento 1 y 2.",
+      "desc_en": "Payroll and parafiscal for companies with 1,500+ employees. Tax and withholding calculations.",
       "tags": ["Nómina", "Gestión BD", "Parafiscales", "Impuestos"]
     }
   ],
 
-  "projects": [
-  
-  ],
+  "projects": [],
 
   "education": [
-    { "year": 2023, "title": "CFGS DAM — Desarrollo de Aplicaciones Multiplataforma", "institution": "En curso", "level": "CFGS", "current": true },
+    {
+      "year": 2023,
+      "title": "CFGS DAM — Desarrollo de Aplicaciones Multiplataforma",
+      "institution": "En curso",
+      "level": "CFGS",
+      "current": true,
+      "modules": "Java · Spring Boot · Flutter · Dart · PostgreSQL · SQL Server · MongoDB · JavaScript · Node.js · Android Studio · Figma · Diseño de Interfaces · Acceso a Datos · Programación Multimedia · C# · Python · Unity"
+    },
     { "year": 2022, "title": "Calidad en el Desarrollo de Software", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2022, "title": "Nanotecnología y Aplicaciones", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2022, "title": "Desarrollo Web con PHP", "institution": "SENA", "level": "Curso", "current": false },
