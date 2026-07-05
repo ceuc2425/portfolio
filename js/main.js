@@ -36,6 +36,11 @@ function renderHero(p, stack) {
 
   document.getElementById('hero').innerHTML = `
     <div class="hero-left">
+      <div class="hero-profile-container">
+        <div class="hero-photo">
+          <img src="https://ui-avatars.com/api/?name=Carlos+Urzola&background=1A2E44&color=fff&size=256" alt="Carlos Urzola" id="profile-photo">
+        </div>
+      </div>
       ${p.available_for_internship ? `
       <div class="hero-tag"><span class="dot"></span>
         Disponible para prácticas DAM · Open to internship

@@ -12,7 +12,7 @@
     "bio_es2": "Con más de 10 años de experiencia optimizando procesos en sectores de inmobiliaria, nómina y ERP, he evolucionado hacia la ingeniería de software asistida por IA. Actualmente diseño y dirijo el desarrollo de PiraroSoft, un ecosistema de productos propios donde implemento un framework de orquestación de agentes que automatiza el ciclo de vida del software, desde el análisis funcional hasta el despliegue.",
     "bio_es3": "Enfoque centrado en construir productos que resuelvan problemas reales, priorizando la robustez técnica, la eficiencia de costes y la escalabilidad del sistema.",
     "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
-    "available_for_internship": true,
+    "available_for_internship": false,
     "cv_file": "Carlos_Urzola_CV_2026.pdf",
     "stats": [
       { "num": "10+", "label": "años de experiencia" },
