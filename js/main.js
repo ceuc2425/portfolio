@@ -15,9 +15,12 @@ fetch('data/data.json')
     renderFooter(data.profile);
     initScrollReveal();
     initActiveNav();
-    initPdfDownload(data.profile);
+    initPdfDownload(data);
+    initThemeToggle();
+    lucide.createIcons();
   })
   .catch(err => console.error('Error cargando data.json:', err));
+
 
 
 // ── HERO ──────────────────────────────────────────────────────
@@ -231,15 +234,58 @@ function renderFooter(p) {
 // contenido ya renderizado en la página usando el diálogo de
 // impresión del navegador ("Guardar como PDF"). El CSS de impresión
 // (@media print en styles.css) reordena la página en formato documento.
-function initPdfDownload(p) {
+function initPdfDownload(data) {
   const btns = document.querySelectorAll('.cv-download-btn');
   if (!btns.length) return;
-  btns.forEach(btn => btn.addEventListener('click', (ev) => {
+
+  btns.forEach(btn => btn.addEventListener('click', async (ev) => {
     ev.preventDefault();
-    document.title = `CV — ${p.name}`;
-    window.print();
+    
+    const p = data.profile;
+    const template = document.getElementById('pdf-template');
+    
+    document.getElementById('pdf-bio').innerText = `${p.bio_es} ${p.bio_es2}`;
+    
+    document.getElementById('pdf-experience').innerHTML = data.experience.map(e => `
+      <div style="margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; font-weight: bold; color: #1A2E44;">
+          <span>${e.role_es} - ${e.company}</span>
+          <span style="font-weight: normal; color: #666;">${e.period}</span>
+        </div>
+        <p style="font-size: 9pt; color: #444; margin: 4px 0;">${e.desc_es}</p>
+      </div>
+    `).join('');
+
+    document.getElementById('pdf-education').innerHTML = data.education.map(e => `
+      <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+        <span style="font-weight: bold; font-size: 9pt;">${e.title}</span>
+        <span style="font-size: 9pt; color: #666;">${e.year}</span>
+      </div>
+      <div style="font-size: 8pt; color: #888; margin-bottom: 8px;">${e.institution}</div>
+    `).join('');
+
+    document.getElementById('pdf-stack').innerHTML = data.stack.map(s => `
+      <div style="margin-bottom: 4px;">
+        <strong>${s.category}:</strong> ${s.items.map(i => i.name).join(', ')}
+      </div>
+    `).join('');
+
+    const opt = {
+      margin: 0,
+      filename: `CV_Carlos_Urzola_${new Date().getFullYear()}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    try {
+      await html2pdf().set(opt).from(template).save();
+    } catch (err) {
+      console.error('Error generating PDF:', err);
+    }
   }));
 }
+
 
 
 // ── CURSOR ────────────────────────────────────────────────────

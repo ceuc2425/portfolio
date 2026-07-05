@@ -24,6 +24,19 @@
   --mono:   'DM Mono', monospace;
 }
 
+[data-theme="dark"] {
+  --bg:      #0f172a;
+  --bg2:     #1e293b;
+  --bg3:     #334155;
+  --border:  #334155;
+  --border2: #475569;
+  --text:    #f8fafc;
+  --muted:   #94a3b8;
+  --light:   #64748b;
+  --navy:    #f8fafc;
+  --navy2:   #e2e8f0;
+}
+
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
@@ -65,7 +78,7 @@ nav {
   color: var(--navy); letter-spacing: 0.01em;
 }
 .nav-logo span { color: var(--blue); }
-.nav-links { display: flex; gap: 2rem; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a {
   font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
   font-weight: 600; color: var(--muted); text-decoration: none;
@@ -78,6 +91,22 @@ nav {
 }
 .nav-links a:hover, .nav-links a.active { color: var(--navy); }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  width: 32px; height: 32px; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--text); transition: all 0.2s;
+}
+.theme-toggle:hover { background: var(--bg2); border-color: var(--blue); }
+.theme-toggle .sun-icon, .theme-toggle .moon-icon { width: 16px; height: 16px; }
+[data-theme="dark"] .sun-icon { display: block; }
+[data-theme="dark"] .moon-icon { display: none; }
+[data-theme="light"] .sun-icon { display: none; }
+[data-theme="light"] .moon-icon { display: block; }
+/* Default state fallback */
+.theme-toggle .sun-icon { display: none; }
+.theme-toggle .moon-icon { display: block; }
 
 /* ── METODOLOGÍA ── */
 #methodology { background: var(--bg); }
