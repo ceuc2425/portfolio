@@ -85,6 +85,15 @@ function renderAbout(p, experience) {
     `;
   }
 
+  if (p.how_i_work) {
+    document.getElementById('how-i-work').innerHTML = `
+      <div class="how-label">Cómo trabajo</div>
+      <ul class="how-list">
+        ${p.how_i_work.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    `;
+  }
+
   document.getElementById('exp-list').innerHTML = experience.map(e => `
     <div class="exp-item reveal">
       <div class="exp-year">${e.period.split('–')[0].trim()}</div>
@@ -153,11 +162,13 @@ function renderPortfolio(projects) {
     <div class="project-card reveal">
       <div class="project-card-inner">
         <div class="project-top">
-          <div class="project-icon" style="background:${p.icon_bg}">${p.icon}</div>
+          <div class="project-icon" style="background:${p.icon_bg}">
+            <i data-lucide="${p.icon}"></i>
+          </div>
           <div class="project-links">
-            ${p.github ? `<a href="${p.github}" target="_blank" title="GitHub">⌥</a>` : ''}
-            ${p.demo   ? `<a href="${p.demo}"   target="_blank" title="Demo">↗</a>` : ''}
-            ${p.doc    ? `<a href="${p.doc}"    target="_blank" title="Docs">📄</a>` : ''}
+            ${p.github ? `<a href="${p.github}" target="_blank" title="GitHub"><i data-lucide="github"></i></a>` : ''}
+            ${p.demo   ? `<a href="${p.demo}"   target="_blank" title="Demo"><i data-lucide="external-link"></i></a>` : ''}
+            ${p.doc    ? `<a href="${p.doc}"    target="_blank" title="Docs"><i data-lucide="file-text"></i></a>` : ''}
           </div>
         </div>
         <div class="project-title">${p.title}</div>
@@ -199,23 +210,23 @@ function renderPortfolio(projects) {
 function renderContact(p) {
   document.getElementById('contact-links').innerHTML = `
     <a class="contact-link" href="mailto:${p.email}">
-      <span class="icon">✉</span>
+      <span class="icon"><i data-lucide="mail"></i></span>
       <div><div class="cl-label">Email</div><div class="cl-val">${p.email}</div></div>
     </a>
     <a class="contact-link" href="tel:${p.phone.replace(/[\s-]/g,'')}">
-      <span class="icon">📱</span>
+      <span class="icon"><i data-lucide="phone"></i></span>
       <div><div class="cl-label">Teléfono</div><div class="cl-val">${p.phone}</div></div>
     </a>
     <a class="contact-link" href="https://${p.linkedin}" target="_blank">
-      <span class="icon" style="font-weight:700;font-size:0.85rem">in</span>
+      <span class="icon"><i data-lucide="linkedin"></i></span>
       <div><div class="cl-label">LinkedIn</div><div class="cl-val">${p.linkedin.replace('linkedin.com/in/','')}</div></div>
     </a>
     <a class="contact-link" href="https://${p.web}" target="_blank">
-      <span class="icon">🌐</span>
+      <span class="icon"><i data-lucide="globe"></i></span>
       <div><div class="cl-label">Web</div><div class="cl-val">${p.web}</div></div>
     </a>
     <div class="contact-link" style="opacity:0.4;pointer-events:none;">
-      <span class="icon">📍</span>
+      <span class="icon"><i data-lucide="map-pin"></i></span>
       <div><div class="cl-label">Ubicación</div><div class="cl-val">${p.location}</div></div>
     </div>`;
 }

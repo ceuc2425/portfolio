@@ -1,17 +1,24 @@
 {
   "profile": {
     "name": "Carlos Urzola",
-    "title_es": "Technical Product Manager | Solution Architect | AI-Assisted Software Engineering",
-    "title_en": "Technical Product Manager | Solution Architect | AI-Assisted Software Engineering",
+    "title_es": "Technical Product Manager · AI Solutions Architect",
+    "title_en": "Technical Product Manager · AI Solutions Architect",
     "email": "carlosxcrew@gmail.com",
     "phone": "+34 631-613-983",
     "web": "https://carlos-urzola.netlify.app/",
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
-    "bio_es": "Consultor funcional con formación empresarial, especializado en diseño de producto, arquitectura de soluciones y desarrollo asistido por IA para la construcción de productos digitales escalables. Mi valor reside en el criterio: transformo la visión de negocio en arquitecturas técnicas robustas, utilizando agentes de IA como aceleradores del proceso de desarrollo bajo supervisión técnica.",
-    "bio_es2": "Con más de 10 años de experiencia optimizando procesos en sectores de inmobiliaria, nómina y ERP, he evolucionado hacia la ingeniería de software asistida por IA. Actualmente diseño y dirijo el desarrollo de PiraroSoft, un ecosistema de productos propios donde implemento un framework de orquestación de agentes que automatiza el ciclo de vida del software, desde el análisis funcional hasta el despliegue.",
-    "bio_es3": "Enfoque centrado en construir productos que resuelvan problemas reales, priorizando la robustez técnica, la eficiencia de costes y la escalabilidad del sistema.",
+    "bio_es": "Consultor funcional con formación empresarial, especializado en el diseño de productos digitales mediante desarrollo asistido por IA. Actúo como puente entre las necesidades de negocio y la implementación técnica, transformando visiones estratégicas en arquitecturas robustas y escalables.",
+    "bio_es2": "Con más de 10 años de experiencia en consultoría funcional y análisis de procesos, he evolucionado hacia la ingeniería de producto asistida por IA. Actualmente dirijo el desarrollo de PiraroSoft, implementando una metodología de orquestación de agentes que optimiza el ciclo de vida del software, desde el discovery hasta el despliegue.",
+    "bio_es3": "Mi enfoque no es la programación mecánica, sino la creación de valor: diseñar sistemas donde la tecnología sirve al negocio y la IA amplifica el criterio humano.",
     "philosophy": "No delego el criterio, delego la ejecución. Utilizo agentes de IA para acelerar el desarrollo, manteniendo las decisiones de negocio, arquitectura, calidad y validación bajo supervisión humana.",
+    "how_i_work": [
+      "Comprendo el negocio antes de escribir una línea de código.",
+      "Documento antes de construir.",
+      "Diseño arquitecturas pensando en la evolución del producto.",
+      "Utilizo IA para acelerar la implementación, no para sustituir el criterio técnico.",
+      "Valido cada entrega frente a requisitos y criterios de calidad."
+    ],
     "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
     "available_for_internship": false,
     "cv_file": "Carlos_Urzola_CV_2026.pdf",
@@ -57,7 +64,7 @@
 
   "stack": [
     {
-      "category": "Product Management",
+      "category": "Product",
       "color": "#818cf8",
       "items": [
         { "name": "Product Discovery", "learning": false },
@@ -83,51 +90,70 @@
       ]
     },
     {
-      "category": "AI-Assisted Engineering",
+      "category": "AI Engineering",
       "color": "#22d3ee",
       "items": [
+        { "name": "AI-Assisted Software Engineering", "learning": false },
         { "name": "AI Workflow Orchestration", "learning": false },
         { "name": "Context Engineering", "learning": false },
-        { "name": "AI-Assisted Software Engineering", "learning": false },
         { "name": "Prompt Engineering", "learning": false },
         { "name": "Multi-Agent Systems", "learning": false },
         { "name": "LLM Workflow Design", "learning": false }
       ]
     },
     {
-      "category": "Backend & Infra",
+      "category": "Backend",
       "color": "#f472b6",
       "items": [
-        { "name": "Java / Spring Boot", "learning": false },
-        { "name": "Spring Security / JWT", "learning": false },
-        { "name": "PostgreSQL", "learning": false },
-        { "name": "Hibernate (ORM)", "learning": false },
-        { "name": "Docker / Docker Compose", "learning": false },
+        { "name": "Java", "learning": false },
+        { "name": "Spring Boot", "learning": false },
+        { "name": "Spring Security", "learning": false },
+        { "name": "Hibernate", "learning": false },
         { "name": "REST APIs", "learning": false },
-        { "name": "Maven", "learning": false },
+        { "name": "JWT", "learning": false }
+      ]
+    },
+    {
+      "category": "Data",
+      "color": "#fb923c",
+      "items": [
+        { "name": "PostgreSQL", "learning": false },
         { "name": "Redis", "learning": false }
       ]
     },
     {
-      "category": "DevOps & OS",
+      "category": "DevOps",
       "color": "#a78bfa",
       "items": [
-        { "name": "Linux / Bash", "learning": false },
-        { "name": "Git / GitHub", "learning": false },
+        { "name": "Docker", "learning": false },
+        { "name": "Docker Compose", "learning": false },
+        { "name": "Git", "learning": false },
+        { "name": "GitHub", "learning": false },
+        { "name": "Linux", "learning": false },
+        { "name": "Bash", "learning": false },
         { "name": "Nginx", "learning": false },
         { "name": "AWS S3", "learning": false },
         { "name": "VPS Management", "learning": false }
       ]
     },
     {
-      "category": "Frontend & Design",
-      "color": "#f9a8d4",
+      "category": "Frontend",
+      "color": "#38bdf8",
       "items": [
         { "name": "Flutter", "learning": false },
-        { "name": "TypeScript / React", "learning": false },
-        { "name": "HTML5/CSS3", "learning": false },
-        { "name": "Figma / Balsamiq", "learning": false },
-        { "name": "UML / Visio", "learning": false }
+        { "name": "TypeScript", "learning": false },
+        { "name": "React", "learning": false },
+        { "name": "HTML/CSS", "learning": false }
+      ]
+    },
+    {
+      "category": "UX",
+      "color": "#f9a8d4",
+      "items": [
+        { "name": "Figma", "learning": false },
+        { "name": "Balsamiq", "learning": false },
+        { "name": "UML", "learning": false },
+        { "name": "Visio", "learning": false }
       ]
     },
     {
@@ -151,8 +177,8 @@
       "period": "03/2019 – 04/2022",
       "duration_es": "38 meses",
       "duration_en": "38 months",
-      "desc_es": "Lideré la definición y el ciclo de vida del CRM interno, traduciendo necesidades de negocio en especificaciones técnicas. Optimicé la gestión de contratos, alquileres y presupuestos, mejorando la eficiencia operativa de la captación y cierre de ventas.",
-      "desc_en": "Led the definition and lifecycle of the internal CRM, translating business needs into technical specifications. Optimized contract and rental management, improving operational efficiency in property acquisition and sales closing.",
+      "desc_es": "Lideré la definición de requisitos funcionales junto al negocio y la priorización de funcionalidades del CRM interno. Diseñé procesos comerciales, coordiné la comunicación entre stakeholders y desarrollo, y validé funcionalmente los entregables asegurando la alineación con los objetivos estratégicos.",
+      "desc_en": "Led the definition of functional requirements with the business and prioritized CRM internal features. Designed commercial processes, coordinated communication between stakeholders and development, and functionally validated deliverables to ensure alignment with strategic goals.",
       "tags": ["Product Ownership", "CRM", "Análisis Funcional", "Node.js", "MySQL", "MongoDB"]
     },
     {
@@ -283,7 +309,7 @@
       "github": "",
       "demo": "",
       "doc": "",
-      "icon": "🧩",
+      "icon": "package",
       "icon_bg": "rgba(37,99,235,0.12)"
     },
     {
@@ -299,7 +325,7 @@
       "github": "",
       "demo": "",
       "doc": "",
-      "icon": "💳",
+      "icon": "wallet",
       "icon_bg": "rgba(52,211,153,0.12)"
     },
     {
@@ -315,7 +341,7 @@
       "github": "",
       "demo": "",
       "doc": "",
-      "icon": "🗂️",
+      "icon": "layers",
       "icon_bg": "rgba(167,139,250,0.12)"
     }
   ],

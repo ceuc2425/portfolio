@@ -298,6 +298,26 @@ section:not(#hero) { border-top: 1px solid var(--border); }
   font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;
   color: var(--navy); font-style: italic;
 }
+
+.how-i-work {
+  margin-top: 2rem; padding: 1.5rem;
+  background: var(--bg3); border-radius: 6px;
+}
+.how-label {
+  font-family: var(--mono); font-size: 0.65rem; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;
+}
+.how-list {
+  list-style: none; display: flex; flex-direction: column; gap: 0.8rem;
+}
+.how-list li {
+  font-size: 0.9rem; color: var(--muted); line-height: 1.5;
+  display: flex; align-items: start; gap: 0.6rem;
+}
+.how-list li::before {
+  content: '✔'; color: var(--blue); font-weight: bold;
+}
+
 .hobbies-row { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem; }
 .hobby-tag {
   font-family: var(--mono); font-size: 0.7rem; color: var(--muted);
