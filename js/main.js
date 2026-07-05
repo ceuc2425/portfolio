@@ -7,6 +7,7 @@ fetch('data/data.json')
   .then(data => {
     renderHero(data.profile, data.stack);
     renderAbout(data.profile, data.experience);
+    renderAiJourney(data.ai_journey);
     renderFormacion(data.education);
     renderPortfolio(data.projects);
     renderContact(data.profile);
@@ -14,6 +15,7 @@ fetch('data/data.json')
     initCursor();
     initScrollReveal();
     initActiveNav();
+    initPdfDownload(data.profile);
   })
   .catch(err => console.error('Error cargando data.json:', err));
 
@@ -43,7 +45,7 @@ function renderHero(p, stack) {
       <div class="hero-badges">${badges}</div>
       <p class="hero-desc">${p.bio_es}</p>
       <div class="hero-cta">
-        <a class="btn-primary" href="${p.cv_file}" download>↓ Descargar CV</a>
+        <a class="btn-primary cv-download-btn" href="#" download>↓ Descargar CV</a>
         <a class="btn-outline" href="#portfolio">Ver proyectos →</a>
       </div>
     </div>
@@ -77,6 +79,23 @@ function renderAbout(p, experience) {
         <div class="exp-tags">
           ${e.tags.map(t => `<span class="exp-tag">${t}</span>`).join('')}
         </div>
+      </div>
+    </div>`).join('');
+}
+
+
+// ── EVOLUCIÓN IA ──────────────────────────────────────────────
+function renderAiJourney(journey) {
+  const el = document.getElementById('ai-journey-list');
+  if (!el || !journey) return;
+  el.innerHTML = journey.map(j => `
+    <div class="ai-item reveal">
+      <div class="ai-phase">${j.phase}</div>
+      <div>
+        <div class="ai-period">${j.period}</div>
+        <div class="ai-title">${j.title}</div>
+        <p class="ai-desc">${j.desc_es}</p>
+        ${j.quote ? `<div class="ai-quote">${j.quote}</div>` : ''}
       </div>
     </div>`).join('');
 }
@@ -157,7 +176,6 @@ function renderContact(p) {
       <span class="icon">📍</span>
       <div><div class="cl-label">Ubicación</div><div class="cl-val">${p.location}</div></div>
     </div>`;
-  document.getElementById('cv-download').href = p.cv_file;
 }
 
 
@@ -166,6 +184,22 @@ function renderFooter(p) {
   document.getElementById('footer').innerHTML = `
     <span>© ${new Date().getFullYear()} ${p.name}</span>
     <span>HTML · CSS · JS — sin frameworks 🚀</span>`;
+}
+
+
+// ── PDF DESDE LOS DATOS (siempre actualizado) ─────────────────
+// En lugar de servir un PDF estático, generamos el PDF desde el
+// contenido ya renderizado en la página usando el diálogo de
+// impresión del navegador ("Guardar como PDF"). El CSS de impresión
+// (@media print en styles.css) reordena la página en formato documento.
+function initPdfDownload(p) {
+  const btns = document.querySelectorAll('.cv-download-btn');
+  if (!btns.length) return;
+  btns.forEach(btn => btn.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    document.title = `CV — ${p.name}`;
+    window.print();
+  }));
 }
 
 

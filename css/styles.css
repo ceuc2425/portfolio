@@ -243,8 +243,30 @@ section:not(#hero) { border-top: 1px solid var(--border); }
   color: var(--muted); padding: 0.1rem 0.45rem; border-radius: 2px;
 }
 
+/* ── EVOLUCIÓN IA ── */
+#ai-journey { background: var(--bg2); }
+.ai-list { display:flex; flex-direction:column; gap:0; max-width: 760px; }
+.ai-item {
+  display: grid; grid-template-columns: 52px 1fr;
+  gap: 1.25rem; padding: 1.4rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.ai-item:first-child { border-top: 1px solid var(--border); }
+.ai-phase {
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
+  color: rgba(37,99,235,0.25); line-height:1;
+}
+.ai-period { font-family: var(--mono); font-size: 0.66rem; color: var(--blue); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+.ai-title { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.ai-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; max-width: 640px; }
+.ai-quote {
+  font-family: var(--serif); font-style: italic; font-size: 0.9rem;
+  color: var(--navy); margin-top: 0.8rem; padding-left: 1rem;
+  border-left: 3px solid var(--blue); line-height: 1.5;
+}
+
 /* ── FORMACIÓN ── */
-#formacion { background: var(--bg2); }
+#formacion { background: var(--bg); }
 .edu-list { display:flex; flex-direction:column; gap:0; }
 .edu-item {
   display: grid; grid-template-columns: 56px 1fr;
@@ -271,7 +293,7 @@ section:not(#hero) { border-top: 1px solid var(--border); }
 }
 
 /* ── PORTFOLIO ── */
-#portfolio { background: var(--bg); }
+#portfolio { background: var(--bg2); }
 .portfolio-header {
   display:flex; align-items:flex-end; justify-content:space-between;
   margin-bottom: 2.5rem; gap:1rem; flex-wrap:wrap;
@@ -381,4 +403,66 @@ footer span:first-child { font-family: var(--serif); font-size:0.85rem; color:rg
 }
 @media (max-width:600px) {
   .nav-links { display:none; }
+}
+
+/* ═══════════════════════════════════════
+   IMPRESIÓN / GENERACIÓN DE PDF
+   Se activa con window.print() desde el botón
+   "Descargar CV". Convierte la web en un
+   documento tipo CV de 1-2 páginas, siempre
+   sincronizado con data.json.
+═══════════════════════════════════════ */
+@media print {
+  @page { size: A4; margin: 14mm 12mm; }
+
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; animation: none !important; transition: none !important; }
+
+  body { cursor: auto; background: #fff; font-size: 9.5pt; }
+  .cursor, .cursor-ring, nav, footer,
+  .btn-outline, #hero .hero-right,
+  .available-badge, .hero-tag,
+  #portfolio, #contact .contact-sub {
+    display: none !important;
+  }
+
+  section { border-top: none; padding: 0.4rem 0 !important; }
+  section:not(:first-of-type) { page-break-inside: avoid; }
+
+  #hero {
+    min-height: auto; background: none !important; padding: 0 0 0.6rem 0 !important;
+    display: block;
+  }
+  #hero::before, #hero::after { display: none; }
+  .hero-name { color: var(--navy) !important; font-size: 22pt; margin-bottom: 0.1rem; text-align: center; }
+  .hero-name span { color: var(--navy) !important; display: inline; }
+  .hero-title { color: var(--muted) !important; font-size: 10pt; margin-bottom: 0.5rem; text-align: center; font-weight: 600; }
+  .hero-badges { margin-bottom: 0.6rem; justify-content: center; }
+  .hero-badge { color: var(--navy) !important; border-color: var(--border2) !important; background: none !important; font-size: 7.5pt; }
+  .hero-desc { color: var(--text) !important; max-width: none; margin-bottom: 0.3rem; font-size: 9pt; text-align: center; }
+  .hero-cta { display: none !important; }
+
+  .section-title { font-size: 13pt; margin-bottom: 0.7rem; }
+  .section-label { font-size: 7.5pt; margin-bottom: 0.3rem; }
+
+  #about { display: block; }
+  .about-text { margin-bottom: 0.8rem; }
+  .about-text p { font-size: 8.6pt; line-height: 1.5; margin-bottom: 0.4rem; }
+  .hobbies-row { display: none; }
+
+  .exp-item, .edu-item, .ai-item { padding: 0.35rem 0; break-inside: avoid; }
+  .exp-role, .edu-title, .ai-title { font-size: 9pt; }
+  .exp-co, .edu-institution, .ai-period { font-size: 7.6pt; }
+  .ai-desc { font-size: 8.2pt; }
+  .exp-tag { font-size: 6.6pt; }
+
+  #ai-journey { background: none !important; }
+  #formacion { background: none !important; }
+
+  #contact { display: block; background: none !important; padding-top: 0.6rem !important; }
+  .contact-headline { display: none; }
+  .contact-links { flex-direction: row; flex-wrap: wrap; gap: 0.6rem; }
+  .contact-link { background: none !important; border: 1px solid var(--border2) !important; color: var(--text) !important; padding: 0.3rem 0.6rem; }
+  .contact-link .icon { color: var(--navy) !important; }
+  .contact-link .cl-label, .contact-link .cl-val { color: var(--text) !important; }
+  .contact-link[style*="opacity"] { opacity: 1 !important; pointer-events: auto !important; }
 }

@@ -1,16 +1,16 @@
 {
   "profile": {
     "name": "Carlos Urzola",
-    "title_es": "Consultor Funcional & Dev Fullstack",
-    "title_en": "Functional Consultant & Fullstack Developer",
+    "title_es": "Technical Product Manager | AI-Assisted Product Development",
+    "title_en": "Technical Product Manager | AI-Assisted Product Development",
     "email": "carlosxcrew@gmail.com",
     "phone": "+34 631-613-983",
     "web": "https://carlos-urzola.netlify.app/",
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
-    "bio_es": "Soy colombiano viviendo en España, con más de 10 años de experiencia como consultor funcional y desarrollador. Mi perfil mezcla lo técnico con lo analítico: sé levantar requisitos, diseñar bases de datos, hacer UX y también escribir el código.",
-    "bio_es2": "He trabajado en inmobiliaria, nómina, ERP y hostelería, en Colombia y España. Finalizando el CFGS DAM con foco en Java, Spring Boot, JavaScript, Node.js, TypeScript y APIs REST. También he tocado C#, Flutter y MongoDB — lenguajes en los que no me pierdo y donde la curva de adaptación sería mínima.",
-    "bio_es3": "Busco prácticas de empresa para completar el ciclo. Prefiero trabajo remoto aunque tengo disponibilidad para desplazarme si fuera necesario.",
+    "bio_es": "Profesional con base en Administración de Empresas y Consultoría Funcional, especializado en la orquestación de agentes de IA para la creación de productos digitales escalables. Mi valor reside en el criterio: transformo la visión de negocio en arquitecturas técnicas robustas, delegando la ejecución a la IA bajo una supervisión rigurosa de calidad y contexto.",
+    "bio_es2": "Con más de 10 años de experiencia optimizando procesos en sectores de inmobiliaria, nómina y ERP, he evolucionado hacia la ingeniería de software asistida por IA. Actualmente diseño y dirijo el desarrollo de PiraroSoft, un ecosistema de productos propios donde implemento un framework de orquestación de agentes que automatiza el ciclo de vida del software, desde el análisis funcional hasta el despliegue.",
+    "bio_es3": "Enfoque centrado en construir productos que resuelvan problemas reales, priorizando la robustez técnica, la eficiencia de costes y la escalabilidad del sistema.",
     "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
     "available_for_internship": true,
     "cv_file": "Carlos_Urzola_CV_2026.pdf",
@@ -20,68 +20,70 @@
     ]
   },
 
+  "ai_journey": [
+    {
+      "phase": "01",
+      "period": "2022 – 2023",
+      "title": "Adopción",
+      "desc_es": "Descubrimiento de herramientas de IA aplicadas a desarrollo (editor + terminal). Automatización de tareas puntuales y generación de código asistido. Fase de adaptación rápida a nuevas herramientas de productividad."
+    },
+    {
+      "phase": "02",
+      "period": "2023 – 2025",
+      "title": "Orquestación",
+      "desc_es": "Transición de usuario a orquestador. Diseño de un framework propio (Agent Template) para estandarizar el abordaje de proyectos: definición de negocio, arquitectura, roadmap de tareas y protocolos de auditoría."
+    },
+    {
+      "phase": "03",
+      "period": "2025 – Actualidad",
+      "title": "Producción",
+      "desc_es": "Implementación de la 'Fábrica de Agentes' en proyectos reales. Especialización en la gestión de memoria por estados y eventos para optimizar la ventana de contexto y reducir el consumo de tokens sin perder la trazabilidad del proyecto.",
+      "quote": "El problema era ahorrar tokens sin perder contexto."
+    }
+  ],
+
   "stack": [
     {
-      "category": "Frontend",
+      "category": "Product Management",
       "color": "#818cf8",
       "items": [
-        { "name": "HTML5",      "learning": false },
-        { "name": "CSS3",       "learning": false },
-        { "name": "SASS",       "learning": false },
-        { "name": "JavaScript", "learning": false },
-        { "name": "TypeScript", "learning": false },
-        { "name": "Vite",       "learning": false }
+        { "name": "Product Discovery", "learning": false },
+        { "name": "Roadmapping", "learning": false },
+        { "name": "Análisis Funcional", "learning": false },
+        { "name": "Metodologías Ágiles", "learning": false },
+        { "name": "Diseño de Procesos", "learning": false }
       ]
     },
     {
-      "category": "Backend",
+      "category": "Backend & Infra",
       "color": "#34d399",
       "items": [
         { "name": "Java",        "learning": false },
         { "name": "Spring Boot", "learning": false },
-        { "name": "Node.js",     "learning": false },
-        { "name": "TypeScript",  "learning": false },
+        { "name": "PostgreSQL",  "learning": false },
+        { "name": "Docker",      "learning": false },
         { "name": "REST APIs",   "learning": false },
-        { "name": "C#",          "learning": false }
+        { "name": "Redis",       "learning": false }
       ]
     },
     {
-      "category": "Mobile",
+      "category": "IA & Agentes",
+      "color": "#22d3ee",
+      "items": [
+        { "name": "Claude Code", "learning": false },
+        { "name": "MCP",         "learning": false },
+        { "name": "Context Design", "learning": false },
+        { "name": "Agent Orchestration", "learning": false }
+      ]
+    },
+    {
+      "category": "Frontend & Mobile",
       "color": "#f472b6",
       "items": [
         { "name": "Flutter", "learning": false },
-        { "name": "Dart",    "learning": false },
-        { "name": "Android Studio", "learning": false }
-      ]
-    },
-    {
-      "category": "Bases de datos",
-      "color": "#fb923c",
-      "items": [
-        { "name": "PostgreSQL", "learning": false },
-        { "name": "MySQL",      "learning": false },
-        { "name": "SQL Server", "learning": false },
-        { "name": "MongoDB",    "learning": false }
-      ]
-    },
-    {
-      "category": "DevOps & Cloud",
-      "color": "#38bdf8",
-      "items": [
-        { "name": "Docker", "learning": false },
-        { "name": "VPS",    "learning": false },
-        { "name": "AWS S3", "learning": false },
-        { "name": "Git",    "learning": false },
-        { "name": "GitHub", "learning": false }
-      ]
-    },
-    {
-      "category": "Auth & APIs",
-      "color": "#a78bfa",
-      "items": [
-        { "name": "JWT",       "learning": false },
-        { "name": "REST APIs", "learning": false },
-        { "name": "Redis",     "learning": false }
+        { "name": "TypeScript", "learning": false },
+        { "name": "React", "learning": false },
+        { "name": "HTML5/CSS3", "learning": false }
       ]
     },
     {
@@ -89,9 +91,8 @@
       "color": "#f9a8d4",
       "items": [
         { "name": "Figma",       "learning": false },
-        { "name": "Illustrator", "learning": false },
-        { "name": "UML / Visio", "learning": false },
-        { "name": "Balsamiq",    "learning": false }
+        { "name": "Balsamiq",    "learning": false },
+        { "name": "UML / Visio", "learning": false }
       ]
     },
     {
@@ -110,130 +111,164 @@
       "company": "Viva Spain",
       "sector_es": "Inmobiliaria & Construcción",
       "sector_en": "Real Estate & Construction",
-      "role_es": "Consultor de Ventas e Informático",
-      "role_en": "Sales & IT Consultant",
+      "role_es": "Technical Product Owner (Internal CRM)",
+      "role_en": "Technical Product Owner (Internal CRM)",
       "period": "03/2019 – 04/2022",
       "duration_es": "38 meses",
       "duration_en": "38 months",
-      "desc_es": "Diseño y desarrollo del CRM interno. Gestión de contratos, alquileres, presupuestos de reforma, contratación de personal de obra, captación y cierre de ventas, fidelización de propietarios.",
-      "desc_en": "Designed and developed the internal CRM. Managed contracts, rental operations, renovation budgets, construction staff hiring, property acquisition, sales closing, and owner retention.",
-      "tags": ["HTML5", "CSS3", "JavaScript", "Node.js", "MySQL", "MongoDB", "Gestión BD", "CRM"]
+      "desc_es": "Lideré la definición y el ciclo de vida del CRM interno, traduciendo necesidades de negocio en especificaciones técnicas. Optimicé la gestión de contratos, alquileres y presupuestos, mejorando la eficiencia operativa de la captación y cierre de ventas.",
+      "desc_en": "Led the definition and lifecycle of the internal CRM, translating business needs into technical specifications. Optimized contract and rental management, improving operational efficiency in property acquisition and sales closing.",
+      "tags": ["Product Ownership", "CRM", "Análisis Funcional", "Node.js", "MySQL", "MongoDB"]
     },
     {
       "id": "solmar",
       "company": "Solmar International",
       "sector_es": "Inmobiliaria & Construcción",
       "sector_en": "Real Estate & Construction",
-      "role_es": "Director de Publicidad y Consultor de Ventas",
-      "role_en": "Advertising Director & Sales Consultant",
+      "role_es": "Digital Product Lead",
+      "role_en": "Digital Product Lead",
       "period": "02/2018 – 02/2019",
       "duration_es": "12 meses",
       "duration_en": "12 months",
-      "desc_es": "Gestión de web y CRM, imagen corporativa, captación de propiedades, trámites de preventa/postventa.",
-      "desc_en": "Web and CRM management, corporate image design, property acquisition, pre/post-sale procedures.",
-      "tags": ["CRM", "Gestión BD", "Marketing", "Diseño gráfico", "Ventas"]
+      "desc_es": "Gestión estratégica del ecosistema digital y CRM. Definición de la imagen corporativa y optimización de los procesos de preventa y postventa para mejorar la conversión de leads.",
+      "desc_en": "Strategic management of the digital ecosystem and CRM. Defined corporate image and optimized pre/post-sale processes to improve lead conversion.",
+      "tags": ["Product Management", "CRM", "Marketing Digital", "Diseño de Procesos"]
     },
     {
       "id": "nexo",
       "company": "Nexo Consulting SL",
       "sector_es": "Inmobiliaria & Construcción",
       "sector_en": "Real Estate & Construction",
-      "role_es": "Informático Consultor de Ventas",
-      "role_en": "IT Sales Consultant",
+      "role_es": "IT Consultant",
+      "role_en": "IT Consultant",
       "period": "11/2017 – 02/2018",
       "duration_es": "3 meses",
       "duration_en": "3 months",
-      "desc_es": "Mantenimiento web, administración CRM, exportación XML a portales, captación de propiedades.",
-      "desc_en": "Web maintenance, CRM administration, XML export to listing portals, property acquisition.",
-      "tags": ["CRM", "XML", "Gestión BD", "Web"]
+      "desc_es": "Administración de CRM y optimización de la exportación de datos XML a portales inmobiliarios, asegurando la integridad y visibilidad de la cartera de propiedades.",
+      "desc_en": "CRM administration and optimization of XML data export to real estate portals, ensuring the integrity and visibility of the property portfolio.",
+      "tags": ["CRM", "XML", "Gestión de Datos", "IT Consulting"]
     },
     {
       "id": "masian",
       "company": "Prensas y Revistas Masian",
       "sector_es": "Papelería y Juguetería",
       "sector_en": "Stationery & Toys",
-      "role_es": "Informático Consultor de Ventas",
-      "role_en": "IT Sales Consultant",
+      "role_es": "Digital Strategy Consultant",
+      "role_en": "Digital Strategy Consultant",
       "period": "11/2016 – 11/2017",
       "duration_es": "12 meses",
       "duration_en": "12 months",
-      "desc_es": "Webs estáticas/dinámicas, WordPress, marketing digital y posicionamiento SEO.",
-      "desc_en": "Static/dynamic websites, WordPress, digital marketing and SEO.",
-      "tags": ["HTML5", "CSS3", "SASS", "JavaScript", "WordPress", "Gestión BD", "SEO"]
+      "desc_es": "Implementación de estrategias de marketing digital y SEO para aumentar la visibilidad orgánica. Desarrollo de interfaces web orientadas a la conversión.",
+      "desc_en": "Implementation of digital marketing and SEO strategies to increase organic visibility. Development of conversion-oriented web interfaces.",
+      "tags": ["SEO", "Digital Strategy", "WordPress", "Frontend"]
     },
     {
       "id": "dinamics",
       "company": "Dinamics IT — Microsoft Dynamics",
       "sector_es": "Outsourcing & Desarrollo de Software",
       "sector_en": "Outsourcing & Software Development",
-      "role_es": "Consultor Funcional",
+      "role_es": "Functional Consultant",
       "role_en": "Functional Consultant",
       "period": "12/2015 – 06/2016",
       "duration_es": "6 meses",
       "duration_en": "6 months",
-      "desc_es": "Implementación y soporte del software de nómina. Levantamiento de requerimientos y visitas a clientes.",
-      "desc_en": "Payroll software implementation and support. Requirements gathering and client visits.",
-      "tags": ["MS Dynamics", "C#", "Gestión BD", "ERP", "Nómina"]
+      "desc_es": "Implementación y soporte de software de nómina. Levantamiento de requerimientos críticos y análisis de procesos de negocio en visitas directas a clientes.",
+      "desc_en": "Payroll software implementation and support. Gathering critical requirements and business process analysis during client visits.",
+      "tags": ["MS Dynamics", "Análisis Funcional", "ERP", "Nómina"]
     },
     {
       "id": "cenet",
       "company": "CENET SA",
       "sector_es": "Desarrollo de Software & Data Center",
       "sector_en": "Software Development & Data Center",
-      "role_es": "Analista Funcional",
+      "role_es": "Functional Analyst",
       "role_en": "Functional Analyst",
       "period": "05/2015 – 11/2015",
       "duration_es": "6 meses",
       "duration_en": "6 months",
-      "desc_es": "Gestión BD SQL/MySQL, documentación ISO, diseño UX/UI, análisis funcional de facturación electrónica y nómina, casos de uso y prueba. Soporte nómina +20.000 empleados.",
-      "desc_en": "SQL/MySQL DB management, ISO documentation, UX/UI design, functional analysis for e-invoicing and payroll. Support for 20,000+ employee payroll.",
-      "tags": ["SQL", "MySQL", "Gestión BD", "UX/UI", "UML", "ISO", "Análisis Funcional"]
+      "desc_es": "Análisis funcional para sistemas de facturación electrónica y nómina a gran escala (+20,000 empleados). Diseño de casos de uso, prototipado UX/UI y documentación bajo norma ISO.",
+      "desc_en": "Functional analysis for large-scale e-invoicing and payroll systems (20,000+ employees). Design of use cases, UX/UI prototyping, and ISO documentation.",
+      "tags": ["Análisis Funcional", "UX/UI", "UML", "ISO", "Gestión de Datos"]
     },
     {
       "id": "systems",
       "company": "Systems LTDA",
       "sector_es": "Outsourcing Nómina & Desarrollo de Software",
       "sector_en": "Payroll Outsourcing & Software Development",
-      "role_es": "Consultor Funcional",
+      "role_es": "Functional Consultant",
       "role_en": "Functional Consultant",
       "period": "10/2013 – 11/2014",
       "duration_es": "12 meses",
       "duration_en": "12 months",
-      "desc_es": "Soporte del software de nómina, implementación a clientes, detección de bugs. Nómina +1.000 empleados.",
-      "desc_en": "Payroll software support, client implementation, bug detection. Payroll for 1,000+ employees.",
-      "tags": ["SQL", "HTML", "CSS", "Gestión BD", "Nómina"]
+      "desc_es": "Soporte e implementación de software de nómina. Detección de bugs críticos y traducción de necesidades del usuario final en mejoras funcionales del producto.",
+      "desc_en": "Payroll software support and implementation. Detection of critical bugs and translation of end-user needs into functional product improvements.",
+      "tags": ["Consultoría", "Soporte Técnico", "Análisis de Requisitos"]
     },
     {
       "id": "pizza1969",
       "company": "Pizza 1969",
       "sector_es": "Hostelería",
       "sector_en": "Hospitality",
-      "role_es": "Coordinador de RRHH y Nómina",
-      "role_en": "HR & Payroll Coordinator",
+      "role_es": "HR & Operations Coordinator",
+      "role_en": "HR & Operations Coordinator",
       "period": "04/2013 – 10/2013",
       "duration_es": "6 meses",
       "duration_en": "6 months",
-      "desc_es": "Selección y contratación de personal, nómina por centros de costo. Logro: reglamento interno que mejoró la organización un 100%.",
-      "desc_en": "Staff recruitment and payroll by cost centre. Achievement: internal regulations that improved organisation by 100%.",
-      "tags": ["RRHH", "Nómina", "Gestión BD"]
+      "desc_es": "Coordinación de RRHH y nómina. Logro principal: Diseño e implementación de un reglamento interno que optimizó la organización operativa en un 100%.",
+      "desc_en": "HR and payroll coordination. Main achievement: Design and implementation of internal regulations that optimized operational organization by 100%.",
+      "tags": ["Operaciones", "RRHH", "Optimización de Procesos"]
     },
     {
       "id": "efectividad",
       "company": "Efectividad Humana",
       "sector_es": "Outsourcing de Nómina & RRHH",
       "sector_en": "Payroll & HR Outsourcing",
-      "role_es": "Analista de Nómina",
+      "role_es": "Payroll Analyst",
       "role_en": "Payroll Analyst",
       "period": "01/2013 – 04/2013",
       "duration_es": "3 meses",
       "duration_en": "3 months",
-      "desc_es": "Nómina y parafiscales para empresas +1.500 empleados. Impuestos y retenciones procedimiento 1 y 2.",
-      "desc_en": "Payroll and parafiscal for companies with 1,500+ employees. Tax and withholding calculations.",
-      "tags": ["Nómina", "Gestión BD", "Parafiscales", "Impuestos"]
+      "desc_es": "Análisis de nómina y parafiscales para empresas de más de 1,500 empleados. Gestión de impuestos y retenciones siguiendo normativas legales estrictas.",
+      "desc_en": "Payroll and parafiscal analysis for companies with 1,500+ employees. Management of taxes and withholdings following strict legal regulations.",
+      "tags": ["Análisis de Datos", "Nómina", "Cumplimiento Legal"]
     }
   ],
 
-  "projects": [],
+  "projects": [
+    {
+      "id": "pirarosoft",
+      "title": "PiraroSoft AI Factory",
+      "desc_es": "Diseño y dirección de un ecosistema de productos SaaS construido mediante una metodología de desarrollo asistido por IA. Implemento la orquestación de agentes especializados para automatizar el ciclo completo: desde la visión de negocio y el roadmap hasta el despliegue continuo.",
+      "tags": ["AI Orchestration", "SaaS", "Spring Boot", "Docker", "Product Strategy"],
+      "icon": "🧩",
+      "icon_bg": "rgba(37,99,235,0.12)",
+      "status": "wip",
+      "github": "",
+      "demo": ""
+    },
+    {
+      "id": "wallet-platform",
+      "title": "Wallet & Token Platform",
+      "desc_es": "Plataforma de economía digital con arquitectura modular diseñada para la escalabilidad. Backend robusto en Spring Boot y PostgreSQL, optimizado para transacciones seguras y gestión de activos digitales, con documentación estrictamente dirigida por requisitos.",
+      "tags": ["Enterprise Architecture", "Spring Boot", "PostgreSQL", "Redis", "Docker"],
+      "icon": "💳",
+      "icon_bg": "rgba(52,211,153,0.12)",
+      "status": "wip",
+      "github": "",
+      "demo": ""
+    },
+    {
+      "id": "agent-template",
+      "title": "Agent Template Framework",
+      "desc_es": "No delego el criterio, delego la ejecución. Diseño el proceso: visión, arquitectura, reglas y validación. Los agentes de IA ejecutan bajo esa dirección, con un sistema propio de memoria basado en estados y eventos para optimizar el uso de tokens y evitar la pérdida de contexto entre sesiones.",
+      "tags": ["AI Engineering", "Context Design", "MCP", "System Architecture"],
+      "icon": "🗂️",
+      "icon_bg": "rgba(167,139,250,0.12)",
+      "status": "wip",
+      "github": "",
+      "demo": ""
+    }
+  ],
 
   "education": [
     {
