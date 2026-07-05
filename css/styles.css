@@ -31,7 +31,6 @@ body {
   font-family: var(--sans);
   font-weight: 400;
   overflow-x: hidden;
-  cursor: none;
 }
 
 /* ── CURSOR ── */
@@ -79,6 +78,26 @@ nav {
 }
 .nav-links a:hover, .nav-links a.active { color: var(--navy); }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+/* ── METODOLOGÍA ── */
+#methodology { background: var(--bg); }
+.methodology-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 1.5rem; 
+}
+.method-card {
+  display: flex; gap: 1.2rem; padding: 1.5rem;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 6px; transition: transform 0.2s, border-color 0.2s;
+}
+.method-card:hover { transform: translateY(-3px); border-color: var(--blue); }
+.method-step {
+  font-family: var(--mono); font-size: 1.2rem; font-weight: 700;
+  color: var(--blue); opacity: 0.5;
+}
+.method-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+.method-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
 /* ── SECTIONS ── */
 section { padding: clamp(5rem,8vw,8rem) clamp(1.5rem,5vw,6rem); }
@@ -322,9 +341,11 @@ section:not(#hero) { border-top: 1px solid var(--border); }
   transition: color 0.2s, border-color 0.2s;
 }
 .project-links a:hover { color: var(--navy); border-color: var(--navy); }
-.project-title { font-family: var(--serif); font-size:1rem; font-weight:700; margin-bottom:0.45rem; color: var(--navy); }
-.project-desc  { font-size:0.83rem; color: var(--muted); line-height:1.65; margin-bottom:1.1rem; }
-.project-tags  { display:flex; flex-wrap:wrap; gap:0.35rem; }
+.project-title { font-family: var(--serif); font-size:1.1rem; font-weight:700; margin-bottom:1rem; color: var(--navy); }
+.project-detail { margin-bottom: 0.8rem; }
+.detail-label { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; color: var(--blue); letter-spacing: 0.05em; margin-bottom: 0.1rem; }
+.detail-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.project-tags  { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top: 1rem; }
 .project-tag {
   font-family: var(--mono); font-size:0.62rem;
   background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15);

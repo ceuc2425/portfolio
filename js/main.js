@@ -7,12 +7,12 @@ fetch('data/data.json')
   .then(data => {
     renderHero(data.profile, data.stack);
     renderAbout(data.profile, data.experience);
+    renderMethodology(data.methodology);
     renderAiJourney(data.ai_journey);
     renderFormacion(data.education);
     renderPortfolio(data.projects);
     renderContact(data.profile);
     renderFooter(data.profile);
-    initCursor();
     initScrollReveal();
     initActiveNav();
     initPdfDownload(data.profile);
@@ -115,6 +115,20 @@ function renderFormacion(education) {
 }
 
 
+// ── METODOLOGÍA ────────────────────────────────────────────────
+function renderMethodology(methodology) {
+  const el = document.getElementById('methodology-grid');
+  if (!el || !methodology) return;
+  el.innerHTML = methodology.map(m => `
+    <div class="method-card reveal">
+      <div class="method-step">${m.step}</div>
+      <div class="method-content">
+        <div class="method-title">${m.title}</div>
+        <p class="method-desc">${m.desc}</p>
+      </div>
+    </div>`).join('');
+}
+
 // ── PORTFOLIO ─────────────────────────────────────────────────
 function renderPortfolio(projects) {
   const statusLabel = { wip:'🔧 En construcción', live:'🟢 Live', professional:'💼 Proyecto profesional' };
@@ -128,28 +142,34 @@ function renderPortfolio(projects) {
           <div class="project-links">
             ${p.github ? `<a href="${p.github}" target="_blank" title="GitHub">⌥</a>` : ''}
             ${p.demo   ? `<a href="${p.demo}"   target="_blank" title="Demo">↗</a>` : ''}
+            ${p.doc    ? `<a href="${p.doc}"    target="_blank" title="Docs">📄</a>` : ''}
           </div>
         </div>
         <div class="project-title">${p.title}</div>
-        <div class="project-desc">${p.desc_es}</div>
-        <div class="project-tags">${p.tags.map(t=>`<span class="project-tag">${t}</span>`).join('')}</div>
+        
+        <div class="project-detail">
+          <div class="detail-label">Problema</div>
+          <div class="detail-text">${p.problem}</div>
+        </div>
+        <div class="project-detail">
+          <div class="detail-label">Solución</div>
+          <div class="detail-text">${p.solution}</div>
+        </div>
+        <div class="project-detail">
+          <div class="detail-label">Arquitectura</div>
+          <div class="detail-text">${p.architecture}</div>
+        </div>
+        <div class="project-detail">
+          <div class="detail-label">Mi Papel</div>
+          <div class="detail-text">${p.my_role}</div>
+        </div>
+        
+        <div class="project-tags">${p.stack.map(t=>`<span class="project-tag">${t}</span>`).join('')}</div>
         <span class="project-status ${statusClass[p.status]||'status-wip'}">${statusLabel[p.status]||p.status}</span>
       </div>
     </div>`).join('');
 
-  const placeholders = `
-    <div class="project-placeholder reveal">
-      <div class="project-placeholder-icon">🚧</div>
-      <h3>Proyecto Final DAM</h3>
-      <p>En construcción.<br/>Java · Spring Boot · Flutter · MongoDB · Docker</p>
-    </div>
-    <div class="project-placeholder reveal">
-      <div class="project-placeholder-icon">➕</div>
-      <h3>Próximo proyecto</h3>
-      <p>Agrégalo en <code>data/data.json</code> → array <code>projects[]</code></p>
-    </div>`;
-
-  document.getElementById('projects-grid').innerHTML = cards + placeholders;
+  document.getElementById('projects-grid').innerHTML = cards;
 }
 
 

@@ -8,7 +8,7 @@
     "web": "https://carlos-urzola.netlify.app/",
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
-    "bio_es": "Profesional con base en Administración de Empresas y Consultoría Funcional, especializado en la orquestación de agentes de IA para la creación de productos digitales escalables. Mi valor reside en el criterio: transformo la visión de negocio en arquitecturas técnicas robustas, delegando la ejecución a la IA bajo una supervisión rigurosa de calidad y contexto.",
+    "bio_es": "Profesional con base en Administración de Empresas y Consultoría Funcional, especializado en la orquestación de agentes de IA para la creación de productos digitales escalables. Mi valor reside en el criterio: transformo la visión de negocio en arquitecturas técnicas robustas, utilizando agentes de IA como aceleradores del proceso de desarrollo bajo supervisión técnica.",
     "bio_es2": "Con más de 10 años de experiencia optimizando procesos en sectores de inmobiliaria, nómina y ERP, he evolucionado hacia la ingeniería de software asistida por IA. Actualmente diseño y dirijo el desarrollo de PiraroSoft, un ecosistema de productos propios donde implemento un framework de orquestación de agentes que automatiza el ciclo de vida del software, desde el análisis funcional hasta el despliegue.",
     "bio_es3": "Enfoque centrado en construir productos que resuelvan problemas reales, priorizando la robustez técnica, la eficiencia de costes y la escalabilidad del sistema.",
     "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
@@ -19,6 +19,18 @@
       { "num": "8",   "label": "empresas — sectores" }
     ]
   },
+
+  "methodology": [
+    { "step": "01", "title": "Idea", "desc": "Identificación de la oportunidad de negocio o el problema a resolver." },
+    { "step": "02", "title": "Discovery", "desc": "Investigación de mercado, análisis de usuarios y validación de la propuesta de valor." },
+    { "step": "03", "title": "Requisitos", "desc": "Traducción de la idea en especificaciones funcionales y técnicas detalladas." },
+    { "step": "04", "title": "Arquitectura", "desc": "Diseño del sistema, elección del stack tecnológico y modelado de datos." },
+    { "step": "05", "title": "Roadmap", "desc": "Planificación de entregables, priorización de funcionalidades y definición de hitos." },
+    { "step": "06", "title": "Orquestación IA", "desc": "Configuración de agentes especializados, definición de contexto y reglas de ejecución." },
+    { "step": "07", "title": "Desarrollo", "desc": "Implementación asistida por IA bajo supervisión técnica y validación constante." },
+    { "step": "08", "title": "QA", "desc": "Pruebas integrales, auditoría de código y verificación contra los requisitos originales." },
+    { "step": "09", "title": "Despliegue", "desc": "Puesta en producción, monitoreo y ciclo de iteración continua." }
+  ],
 
   "ai_journey": [
     {
@@ -238,35 +250,47 @@
     {
       "id": "pirarosoft",
       "title": "PiraroSoft AI Factory",
-      "desc_es": "Diseño y dirección de un ecosistema de productos SaaS construido mediante una metodología de desarrollo asistido por IA. Implemento la orquestación de agentes especializados para automatizar el ciclo completo: desde la visión de negocio y el roadmap hasta el despliegue continuo.",
-      "tags": ["AI Orchestration", "SaaS", "Spring Boot", "Docker", "Product Strategy"],
-      "icon": "🧩",
-      "icon_bg": "rgba(37,99,235,0.12)",
+      "problem": "La falta de estandarización y pérdida de contexto en el desarrollo asistido por IA generan ineficiencias y errores recurrentes.",
+      "solution": "Un ecosistema de orquestación de agentes especializados que automatizan el ciclo completo desde la visión hasta el despliegue.",
+      "architecture": "Sistema de memoria basado en estados y eventos con checkpoints periódicos para recuperación de contexto.",
+      "stack": ["AI Orchestration", "SaaS", "Spring Boot", "Docker", "Product Strategy"],
+      "my_role": "Fundador y Arquitecto de Producto",
       "status": "wip",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "doc": "",
+      "icon": "🧩",
+      "icon_bg": "rgba(37,99,235,0.12)"
     },
     {
       "id": "wallet-platform",
       "title": "Wallet & Token Platform",
-      "desc_es": "Plataforma de economía digital con arquitectura modular diseñada para la escalabilidad. Backend robusto en Spring Boot y PostgreSQL, optimizado para transacciones seguras y gestión de activos digitales, con documentación estrictamente dirigida por requisitos.",
-      "tags": ["Enterprise Architecture", "Spring Boot", "PostgreSQL", "Redis", "Docker"],
-      "icon": "💳",
-      "icon_bg": "rgba(52,211,153,0.12)",
+      "problem": "Necesidad de una plataforma de economía digital segura, modular y altamente escalable.",
+      "solution": "Arquitectura modular con backend robusto y frontend performante, centrada en la seguridad de transacciones.",
+      "architecture": "Backend modular en Spring Boot, base de datos PostgreSQL optimizada para alta disponibilidad y Redis para caché.",
+      "stack": ["Enterprise Architecture", "Spring Boot", "PostgreSQL", "Redis", "Docker"],
+      "my_role": "Lead Product Designer & Architect",
       "status": "wip",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "doc": "",
+      "icon": "💳",
+      "icon_bg": "rgba(52,211,153,0.12)"
     },
     {
       "id": "agent-template",
       "title": "Agent Template Framework",
-      "desc_es": "No delego el criterio, delego la ejecución. Diseño el proceso: visión, arquitectura, reglas y validación. Los agentes de IA ejecutan bajo esa dirección, con un sistema propio de memoria basado en estados y eventos para optimizar el uso de tokens y evitar la pérdida de contexto entre sesiones.",
-      "tags": ["AI Engineering", "Context Design", "MCP", "System Architecture"],
-      "icon": "🗂️",
-      "icon_bg": "rgba(167,139,250,0.12)",
+      "problem": "Inconsistencia en la calidad de los entregables de la IA al no disponer de un contexto estructurado.",
+      "solution": "Framework de estandarización que obliga al agente a seguir un flujo: Negocio $\rightarrow$ Arquitectura $\rightarrow$ Tareas $\rightarrow$ QA.",
+      "architecture": "Estructura de directorios viva (business/, context/, tasks/) que sirve como fuente de verdad para el LLM.",
+      "stack": ["AI Engineering", "Context Design", "MCP", "System Architecture"],
+      "my_role": "Creador del Método",
       "status": "wip",
       "github": "",
-      "demo": ""
+      "demo": "",
+      "doc": "",
+      "icon": "🗂️",
+      "icon_bg": "rgba(167,139,250,0.12)"
     }
   ],
 
