@@ -75,6 +75,13 @@ function renderAbout(p, experience) {
       ${p.hobbies.map(h => `<span class="hobby-tag">${h}</span>`).join('')}
     </div>`;
 
+  if (p.philosophy) {
+    document.getElementById('philosophy').innerHTML = `
+      <div class="phil-label">Filosofía</div>
+      <div class="phil-text">${p.philosophy}</div>
+    `;
+  }
+
   document.getElementById('exp-list').innerHTML = experience.map(e => `
     <div class="exp-item reveal">
       <div class="exp-year">${e.period.split('–')[0].trim()}</div>
@@ -157,6 +164,10 @@ function renderPortfolio(projects) {
           <div class="detail-text">${p.problem}</div>
         </div>
         <div class="project-detail">
+          <div class="detail-label">Objetivo</div>
+          <div class="detail-text">${p.goal}</div>
+        </div>
+        <div class="project-detail">
           <div class="detail-label">Solución</div>
           <div class="detail-text">${p.solution}</div>
         </div>
@@ -165,11 +176,14 @@ function renderPortfolio(projects) {
           <div class="detail-text">${p.architecture}</div>
         </div>
         <div class="project-detail">
+          <div class="detail-label">Tecnologías</div>
+          <div class="detail-text">${p.stack.join(' · ')}</div>
+        </div>
+        <div class="project-detail">
           <div class="detail-label">Mi Papel</div>
           <div class="detail-text">${p.my_role}</div>
         </div>
         
-        <div class="project-tags">${p.stack.map(t=>`<span class="project-tag">${t}</span>`).join('')}</div>
         <span class="project-status ${statusClass[p.status]||'status-wip'}">${statusLabel[p.status]||p.status}</span>
       </div>
     </div>`).join('');
