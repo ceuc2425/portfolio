@@ -27,8 +27,20 @@ fetch('data/data.json')
   .then(data => {
     renderHero(data.profile);
     renderStack(data.stack);
+    renderPersonal(data.profile);
     renderAbout(data.profile, data.experience);
-    renderMethodology(data.//...
+    renderPortfolio(data.projects);
+    renderFormacion(data.education);
+    renderMethodology(data.methodology);
+    renderAiJourney(data.ai_journey);
+    renderContact(data.profile);
+    renderFooter(data.profile);
+    initScrollReveal();
+    initActiveNav();
+    initPdfDownload(data);
+    lucide.createIcons();
+  })
+  .catch(err => console.error('Error cargando data.json:', err));
 
 
 
