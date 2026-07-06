@@ -21,8 +21,6 @@ fetch('data/data.json')
     lucide.createIcons();
   })
   .catch(err => console.error('Error cargando data.json:', err));
-)
-  .catch(err => console.error('Error cargando data.json:', err));
 
 
 
