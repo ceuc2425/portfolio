@@ -38,11 +38,7 @@ fetch('data/data.json')
   .then(data => {
     console.log('Data loaded successfully');
     
-    // Run critical UI initialization first
-    initScrollReveal();
-    initActiveNav();
-    
-    // Render all sections safely
+    // 1. Render all sections first
     safeRender(renderHero, data.profile);
     safeRender(renderStack, data.stack);
     safeRender(renderPersonal, data.profile);
@@ -54,16 +50,19 @@ fetch('data/data.json')
     safeRender(renderContact, data.profile);
     safeRender(renderFooter, data.profile);
     
+    // 2. Now initialize observers and nav because elements now exist in DOM
+    initScrollReveal();
+    initActiveNav();
+    
     safeRender(initPdfDownload, data);
     
-    // Final icon pass
+    // Final icon pass to ensure all new elements have icons
     if (window.lucide) {
       lucide.createIcons();
     }
   })
   .catch(err => {
     console.error('CRITICAL ERROR loading data.json:', err);
-    // Fallback: make everything visible even if JS fails
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   });
 
