@@ -194,7 +194,7 @@ function renderFormacion(education) {
       <div>
         <div class="edu-title">${e.title}</div>
         <div class="edu-institution">${e.institution}</div>
-        <span class="edu-level${e.current ? ' current-badge' : ''}">${e.current ? '📚 En curso — prácticas pendientes' : e.level}</span>
+        <span class="edu-level${e.current ? ' current-badge' : ''}">${e.current ? 'En curso — prácticas pendientes' : e.level}</span>
       </div>
     </div>`).join('');
 }
