@@ -2,6 +2,25 @@
    CARLOS URZOLA — main.js
 ═══════════════════════════════════════ */
 
+// ── THEME & INIT ────────────────────────────────────────────────
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  btn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
+// Initialize theme immediately to avoid flash and enable toggle before data loads
+initThemeToggle();
+
 fetch('data/data.json')
   .then(r => r.json())
   .then(data => {
@@ -17,7 +36,6 @@ fetch('data/data.json')
     initScrollReveal();
     initActiveNav();
     initPdfDownload(data);
-    initThemeToggle();
     lucide.createIcons();
   })
   .catch(err => console.error('Error cargando data.json:', err));
@@ -316,22 +334,6 @@ function initPdfDownload(data) {
 
 
 
-function initThemeToggle() {
-  const btn = document.querySelector('.theme-toggle');
-  if (!btn) return;
-  
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  
-  btn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-}
-
-// ── CURSOR ────────────────────────────────────────────────────
 // ── SCROLL REVEAL ─────────────────────────────────────────────
 function initScrollReveal() {
   const obs = new IntersectionObserver(

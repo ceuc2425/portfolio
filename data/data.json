@@ -8,16 +8,16 @@
     "web": "https://carlos-urzola.netlify.app/",
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
-    "bio_es": "Consultor funcional y Arquitecto de Soluciones especializado en el diseño de ecosistemas Multi-tenant y la orquestación de agentes de IA. Experto en implementar principios de Idempotencia y Concurrencia avanzada para garantizar la integridad de datos en sistemas financieros y empresariales, transformando visiones estratégicas en arquitecturas robustas y escalables.",
-    "bio_es2": "Con más de 10 años de experiencia en consultoría y análisis de procesos, he evolucionado hacia la ingeniería de producto asistida por IA. Lidero el desarrollo de la Fábrica PiraroSoft, implementando un modelo de desarrollo atómico y orquestación de agentes que optimiza el ciclo de vida del software desde el discovery hasta el despliegue.",
-    "bio_es3": "Mi enfoque es la creación de valor mediante la tecnología: diseñar sistemas donde la arquitectura sirve al negocio y la IA amplifica el criterio humano.",
-    "philosophy": "No delego el criterio, delego la ejecución. Utilizo agentes de IA para acelerar el desarrollo, manteniendo las decisiones de negocio, arquitectura, calidad y validación bajo supervisión humana.",
+    "bio_es": "Tengo más de 10 años de experiencia en consultoría funcional y análisis de procesos. Ahora me centro en el diseño de productos digitales y la arquitectura de software asistida por IA. Me especializo en montar sistemas Multi-tenant y asegurar que la infraestructura sea robusta mediante principios de Idempotencia y Concurrencia avanzada.",
+    "bio_es2": "Lidero el desarrollo de la Fábrica PiraroSoft, donde aplico una metodología de desarrollo atómico y orquestación de agentes de IA para optimizar todo el ciclo de vida del software, desde el discovery hasta el despliegue final.",
+    "bio_es3": "Mi objetivo es simple: que la tecnología esté al servicio del negocio. Diseño arquitecturas donde la IA no sustituye el criterio técnico, sino que lo amplifica para entregar valor real y escalable.",
+    "philosophy": "No delego el criterio, delego la ejecución. Uso la IA para acelerar la implementación, pero mantengo el control total sobre la arquitectura, la calidad y las decisiones de negocio.",
     "how_i_work": [
-      "Comprendo el negocio antes de escribir una línea de código.",
-      "Documento antes de construir.",
-      "Diseño arquitecturas pensando en la evolución del producto.",
-      "Utilizo IA para acelerar la implementación, no para sustituir el criterio técnico.",
-      "Valido cada entrega frente a requisitos y criterios de calidad."
+      "Primero entiendo el negocio, luego diseño la solución.",
+      "La documentación es mi base antes de escribir cualquier línea de código.",
+      "Construyo pensando en la evolución futura del producto.",
+      "Uso la IA como un acelerador, nunca como sustituto del criterio técnico.",
+      "Valido cada entrega contra requisitos reales y criterios de calidad estrictos."
     ],
     "hobbies": ["Guitarra", "Ajedrez", "Baloncesto", "Programar"],
     "available_for_internship": false,
@@ -78,49 +78,21 @@
       ]
     },
     {
-      "category": "Backend (Enterprise)",
+      "category": "Backend",
       "color": "#34d399",
       "items": [
-        { "name": "Java 25", "learning": false },
-        { "name": "Spring Boot 4", "learning": false },
-        { "name": "Hibernate (ORM)", "learning": false },
-        { "name": "Maven", "learning": false },
-        { "name": "Flyway", "learning": false },
-        { "name": "MinIO", "learning": false },
-        { "name": "PostgreSQL", "learning": false },
-        { "name": "REST APIs", "learning": false }
+        { "name": "Enterprise: Java 25, Spring Boot 4, Hibernate, Flyway, MinIO", "learning": false },
+        { "name": "Agile: Node.js, Express, MongoDB, Redis, Prisma", "learning": false },
+        { "name": "Rapid: JS Vanilla, Vite", "learning": false },
+        { "name": "PostgreSQL, REST APIs, Maven", "learning": false }
       ]
     },
     {
-      "category": "Backend (Agile)",
-      "color": "#f472b6",
-      "items": [
-        { "name": "Node.js", "learning": false },
-        { "name": "Express", "learning": false },
-        { "name": "MongoDB", "learning": false },
-        { "name": "Redis", "learning": false },
-        { "name": "Prisma", "learning": false },
-        { "name": "Socket.io", "learning": false }
-      ]
-    },
-    {
-      "category": "Frontend (Multiplatform)",
+      "category": "Frontend",
       "color": "#38bdf8",
       "items": [
-        { "name": "Flutter", "learning": false },
-        { "name": "Riverpod", "learning": false },
-        { "name": "Dio", "learning": false },
-        { "name": "Dart", "learning": false }
-      ]
-    },
-    {
-      "category": "Frontend (Web)",
-      "color": "#38bdf8",
-      "items": [
-        { "name": "Vue 3", "learning": false },
-        { "name": "TypeScript", "learning": false },
-        { "name": "React", "learning": false },
-        { "name": "Tailwind CSS", "learning": false },
+        { "name": "Multiplatform: Flutter, Riverpod, Dio, Dart", "learning": false },
+        { "name": "Web: Vue 3, TypeScript, React, Tailwind CSS", "learning": false },
         { "name": "HTML/CSS", "learning": false }
       ]
     },
@@ -128,12 +100,10 @@
       "category": "DevOps & Infra",
       "color": "#a78bfa",
       "items": [
-        { "name": "Docker", "learning": false },
-        { "name": "Nginx", "learning": false },
-        { "name": "SSL / DNS Management", "learning": false },
-        { "name": "Linux / Bash", "learning": false },
-        { "name": "Git / GitHub", "learning": false },
-        { "name": "VPS Management", "learning": false }
+        { "name": "Cloud Ops: VPS Linux, Nginx, SSL, DNS, Dominios", "learning": false },
+        { "name": "Containerization: Docker, Docker Compose", "learning": false },
+        { "name": "Data Integrity: DB Backups, Monitoring", "learning": false },
+        { "name": "Git / GitHub", "learning": false }
       ]
     },
     {
@@ -151,13 +121,9 @@
       "category": "Toolstack",
       "color": "#f9a8d4",
       "items": [
-        { "name": "Bruno", "learning": false },
-        { "name": "Postman", "learning": false },
-        { "name": "Draw.io", "learning": false },
-        { "name": "Notion", "learning": false },
-        { "name": "Jira", "learning": false },
-        { "name": "IntelliJ IDEA", "learning": false },
-        { "name": "VS Code", "learning": false }
+        { "name": "Bruno, Postman, Thunder Client", "learning": false },
+        { "name": "Draw.io, Notion, Jira", "learning": false },
+        { "name": "IntelliJ IDEA, VS Code", "learning": false }
       ]
     },
     {
@@ -354,9 +320,9 @@
     {
       "year": 2023,
       "title": "CFGS DAM — Desarrollo de Aplicaciones Multiplataforma",
-      "institution": "En curso",
+      "institution": "Homologado",
       "level": "CFGS",
-      "current": true,
+      "current": false,
       "modules": "Java · Spring Boot · Flutter · Dart · PostgreSQL · SQL Server · MongoDB · JavaScript · Node.js · Android Studio · Figma · Diseño de Interfaces · Acceso a Datos · Programación Multimedia · C# · Python · Unity"
     },
     { "year": 2022, "title": "Calidad en el Desarrollo de Software", "institution": "SENA", "level": "Curso", "current": false },
