@@ -8,9 +8,9 @@
     "web": "https://carlos-urzola.netlify.app/",
     "linkedin": "linkedin.com/in/carlos-urzola-eu",
     "location": "Alicante, España · Disponible remoto",
-    "bio_es": "Consultor funcional con formación empresarial, especializado en el diseño de productos digitales mediante desarrollo asistido por IA. Actúo como puente entre las necesidades de negocio y la implementación técnica, transformando visiones estratégicas en arquitecturas robustas y escalables.",
-    "bio_es2": "Con más de 10 años de experiencia en consultoría funcional y análisis de procesos, he evolucionado hacia la ingeniería de producto asistida por IA. Actualmente dirijo el desarrollo de PiraroSoft, implementando una metodología de orquestación de agentes que optimiza el ciclo de vida del software, desde el discovery hasta el despliegue.",
-    "bio_es3": "Mi enfoque no es la programación mecánica, sino la creación de valor: diseñar sistemas donde la tecnología sirve al negocio y la IA amplifica el criterio humano.",
+    "bio_es": "Consultor funcional y Arquitecto de Soluciones especializado en el diseño de ecosistemas Multi-tenant y la orquestación de agentes de IA. Experto en implementar principios de Idempotencia y Concurrencia avanzada para garantizar la integridad de datos en sistemas financieros y empresariales, transformando visiones estratégicas en arquitecturas robustas y escalables.",
+    "bio_es2": "Con más de 10 años de experiencia en consultoría y análisis de procesos, he evolucionado hacia la ingeniería de producto asistida por IA. Lidero el desarrollo de la Fábrica PiraroSoft, implementando un modelo de desarrollo atómico y orquestación de agentes que optimiza el ciclo de vida del software desde el discovery hasta el despliegue.",
+    "bio_es3": "Mi enfoque es la creación de valor mediante la tecnología: diseñar sistemas donde la arquitectura sirve al negocio y la IA amplifica el criterio humano.",
     "philosophy": "No delego el criterio, delego la ejecución. Utilizo agentes de IA para acelerar el desarrollo, manteniendo las decisiones de negocio, arquitectura, calidad y validación bajo supervisión humana.",
     "how_i_work": [
       "Comprendo el negocio antes de escribir una línea de código.",
@@ -64,102 +64,110 @@
 
   "stack": [
     {
-      "category": "Product",
+      "category": "Architecture & Product",
       "color": "#818cf8",
       "items": [
+        { "name": "Multi-tenant Systems", "learning": false },
+        { "name": "Idempotency & Performance", "learning": false },
+        { "name": "Atomic Development", "learning": false },
         { "name": "Product Discovery", "learning": false },
-        { "name": "Product Management", "learning": false },
-        { "name": "Product Ownership", "learning": false },
         { "name": "Roadmapping", "learning": false },
-        { "name": "Backlog Management", "learning": false },
         { "name": "Requirements Engineering", "learning": false },
         { "name": "Stakeholder Management", "learning": false },
         { "name": "Functional Analysis", "learning": false }
       ]
     },
     {
-      "category": "Architecture",
+      "category": "Backend (Enterprise)",
       "color": "#34d399",
       "items": [
-        { "name": "Solution Architecture", "learning": false },
-        { "name": "Software Architecture", "learning": false },
-        { "name": "API Design", "learning": false },
-        { "name": "Domain Modeling", "learning": false },
-        { "name": "Modular Architecture", "learning": false },
-        { "name": "Documentation-Driven Development", "learning": false }
+        { "name": "Java 25", "learning": false },
+        { "name": "Spring Boot 4", "learning": false },
+        { "name": "Hibernate (ORM)", "learning": false },
+        { "name": "Maven", "learning": false },
+        { "name": "Flyway", "learning": false },
+        { "name": "MinIO", "learning": false },
+        { "name": "PostgreSQL", "learning": false },
+        { "name": "REST APIs", "learning": false }
+      ]
+    },
+    {
+      "category": "Backend (Agile)",
+      "color": "#f472b6",
+      "items": [
+        { "name": "Node.js", "learning": false },
+        { "name": "Express", "learning": false },
+        { "name": "MongoDB", "learning": false },
+        { "name": "Redis", "learning": false },
+        { "name": "Prisma", "learning": false },
+        { "name": "Socket.io", "learning": false }
+      ]
+    },
+    {
+      "category": "Frontend (Multiplatform)",
+      "color": "#38bdf8",
+      "items": [
+        { "name": "Flutter", "learning": false },
+        { "name": "Riverpod", "learning": false },
+        { "name": "Dio", "learning": false },
+        { "name": "Dart", "learning": false }
+      ]
+    },
+    {
+      "category": "Frontend (Web)",
+      "color": "#38bdf8",
+      "items": [
+        { "name": "Vue 3", "learning": false },
+        { "name": "TypeScript", "learning": false },
+        { "name": "React", "learning": false },
+        { "name": "Tailwind CSS", "learning": false },
+        { "name": "HTML/CSS", "learning": false }
+      ]
+    },
+    {
+      "category": "DevOps & Infra",
+      "color": "#a78bfa",
+      "items": [
+        { "name": "Docker", "learning": false },
+        { "name": "Nginx", "learning": false },
+        { "name": "SSL / DNS Management", "learning": false },
+        { "name": "Linux / Bash", "learning": false },
+        { "name": "Git / GitHub", "learning": false },
+        { "name": "VPS Management", "learning": false }
       ]
     },
     {
       "category": "AI Engineering",
       "color": "#22d3ee",
       "items": [
-        { "name": "AI-Assisted Software Engineering", "learning": false },
-        { "name": "AI Workflow Orchestration", "learning": false },
-        { "name": "Context Engineering", "learning": false },
+        { "name": "Agent Orchestration", "learning": false },
+        { "name": "RAG (Retrieval-Augmented Generation)", "learning": false },
+        { "name": "MCP (Model Context Protocol)", "learning": false },
         { "name": "Prompt Engineering", "learning": false },
-        { "name": "Multi-Agent Systems", "learning": false },
         { "name": "LLM Workflow Design", "learning": false }
       ]
     },
-      {
-        "category": "Backend",
-        "color": "#f472b6",
-        "items": [
-          { "name": "Java / Spring Boot", "learning": false },
-          { "name": "Spring Security / JWT", "learning": false },
-          { "name": "PostgreSQL", "learning": false },
-          { "name": "MongoDB", "learning": false },
-          { "name": "Prisma", "learning": false },
-          { "name": "MinIO", "learning": false },
-          { "name": "Hibernate (ORM)", "learning": false },
-          { "name": "REST APIs", "learning": false },
-          { "name": "Maven", "learning": false },
-          { "name": "Redis", "learning": false }
-        ]
-      },
-      {
-        "category": "DevOps",
-        "color": "#a78bfa",
-        "items": [
-          { "name": "Linux / Bash", "learning": false },
-          { "name": "Git", "learning": false },
-          { "name": "GitHub", "learning": false },
-          { "name": "Docker", "learning": false },
-          { "name": "Nginx", "learning": false },
-          { "name": "AWS S3", "learning": false },
-          { "name": "VPS Management", "learning": false }
-        ]
-      },
-      {
-        "category": "Frontend",
-        "color": "#38bdf8",
-        "items": [
-          { "name": "Flutter", "learning": false },
-          { "name": "TypeScript / React", "learning": false },
-          { "name": "Vue.js", "learning": false },
-          { "name": "HTML/CSS", "learning": false }
-        ]
-      },
     {
-      "category": "UX",
+      "category": "Toolstack",
       "color": "#f9a8d4",
       "items": [
-        { "name": "Figma", "learning": false },
-        { "name": "Balsamiq", "learning": false },
-        { "name": "UML / Visio", "learning": false }
+        { "name": "Bruno", "learning": false },
+        { "name": "Postman", "learning": false },
+        { "name": "Draw.io", "learning": false },
+        { "name": "Notion", "learning": false },
+        { "name": "Jira", "learning": false },
+        { "name": "IntelliJ IDEA", "learning": false },
+        { "name": "VS Code", "learning": false }
       ]
     },
-      {
-        "category": "En aprendizaje",
-        "color": "#94a3b8",
-        "items": [
-          { "name": "AI Engineering", "learning": true },
-          { "name": "Unity",  "learning": true },
-          { "name": "Blender", "learning": true },
-          { "name": "Python", "learning": true },
-          { "name": "C#", "learning": true }
-        ]
-      }
+    {
+      "category": "En aprendizaje",
+      "color": "#94a3b8",
+      "items": [
+        { "name": "AI Engineering Loop", "learning": true },
+        { "name": "English", "learning": true }
+      ]
+    }
   ],
 
   "experience": [
