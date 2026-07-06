@@ -18,6 +18,7 @@ fetch('data/data.json')
     initActiveNav();
     initPdfDownload(data);
     initThemeToggle();
+    initCursor();
     lucide.createIcons();
   })
   .catch(err => console.error('Error cargando data.json:', err));
@@ -253,7 +254,7 @@ function renderContact(p) {
 function renderFooter(p) {
   document.getElementById('footer').innerHTML = `
     <span>© ${new Date().getFullYear()} ${p.name}</span>
-    <span>HTML · CSS · JS — sin frameworks 🚀</span>`;
+    <span>HTML · CSS · JS — sin frameworks</span>`;
 }
 
 
@@ -315,6 +316,21 @@ function initPdfDownload(data) {
 }
 
 
+
+function initThemeToggle() {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  btn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
 
 // ── CURSOR ────────────────────────────────────────────────────
 function initCursor() {

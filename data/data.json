@@ -19,7 +19,7 @@
       "Utilizo IA para acelerar la implementación, no para sustituir el criterio técnico.",
       "Valido cada entrega frente a requisitos y criterios de calidad."
     ],
-    "hobbies": ["🎸 Guitarra", "♟ Ajedrez", "🏀 Baloncesto", "💻 Programar"],
+    "hobbies": ["Guitarra", "Ajedrez", "Baloncesto", "Programar"],
     "available_for_internship": false,
     "cv_file": "Carlos_Urzola_CV_2026.pdf",
     "stats": [
@@ -101,39 +101,45 @@
         { "name": "LLM Workflow Design", "learning": false }
       ]
     },
-    {
-      "category": "Backend",
-      "color": "#f472b6",
-      "items": [
-        { "name": "Java / Spring Boot", "learning": false },
-        { "name": "Spring Security / JWT", "learning": false },
-        { "name": "PostgreSQL", "learning": false },
-        { "name": "Hibernate (ORM)", "learning": false },
-        { "name": "REST APIs", "learning": false },
-        { "name": "Maven", "learning": false },
-        { "name": "Redis", "learning": false }
-      ]
-    },
-    {
-      "category": "DevOps",
-      "color": "#a78bfa",
-      "items": [
-        { "name": "Linux / Bash", "learning": false },
-        { "name": "Git / GitHub", "learning": false },
-        { "name": "Nginx", "learning": false },
-        { "name": "AWS S3", "learning": false },
-        { "name": "VPS Management", "learning": false }
-      ]
-    },
-    {
-      "category": "Frontend",
-      "color": "#38bdf8",
-      "items": [
-        { "name": "Flutter", "learning": false },
-        { "name": "TypeScript / React", "learning": false },
-        { "name": "HTML/CSS", "learning": false }
-      ]
-    },
+      {
+        "category": "Backend",
+        "color": "#f472b6",
+        "items": [
+          { "name": "Java / Spring Boot", "learning": false },
+          { "name": "Spring Security / JWT", "learning": false },
+          { "name": "PostgreSQL", "learning": false },
+          { "name": "MongoDB", "learning": false },
+          { "name": "Prisma", "learning": false },
+          { "name": "MinIO", "learning": false },
+          { "name": "Hibernate (ORM)", "learning": false },
+          { "name": "REST APIs", "learning": false },
+          { "name": "Maven", "learning": false },
+          { "name": "Redis", "learning": false }
+        ]
+      },
+      {
+        "category": "DevOps",
+        "color": "#a78bfa",
+        "items": [
+          { "name": "Linux / Bash", "learning": false },
+          { "name": "Git", "learning": false },
+          { "name": "GitHub", "learning": false },
+          { "name": "Docker", "learning": false },
+          { "name": "Nginx", "learning": false },
+          { "name": "AWS S3", "learning": false },
+          { "name": "VPS Management", "learning": false }
+        ]
+      },
+      {
+        "category": "Frontend",
+        "color": "#38bdf8",
+        "items": [
+          { "name": "Flutter", "learning": false },
+          { "name": "TypeScript / React", "learning": false },
+          { "name": "Vue.js", "learning": false },
+          { "name": "HTML/CSS", "learning": false }
+        ]
+      },
     {
       "category": "UX",
       "color": "#f9a8d4",
@@ -143,14 +149,17 @@
         { "name": "UML / Visio", "learning": false }
       ]
     },
-    {
-      "category": "En aprendizaje",
-      "color": "#94a3b8",
-      "items": [
-        { "name": "Python", "learning": true },
-        { "name": "Unity",  "learning": true }
-      ]
-    }
+      {
+        "category": "En aprendizaje",
+        "color": "#94a3b8",
+        "items": [
+          { "name": "AI Engineering", "learning": true },
+          { "name": "Unity",  "learning": true },
+          { "name": "Blender", "learning": true },
+          { "name": "Python", "learning": true },
+          { "name": "C#", "learning": true }
+        ]
+      }
   ],
 
   "experience": [
