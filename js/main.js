@@ -18,8 +18,9 @@ function initThemeToggle() {
   });
 }
 
-// Initialize theme immediately to avoid flash and enable toggle before data loads
+// Initialize theme and icons immediately to ensure UI elements are visible
 initThemeToggle();
+lucide.createIcons();
 
 fetch('data/data.json')
   .then(r => r.json())
@@ -27,18 +28,8 @@ fetch('data/data.json')
     renderHero(data.profile);
     renderStack(data.stack);
     renderAbout(data.profile, data.experience);
-    renderMethodology(data.methodology);
-    renderAiJourney(data.ai_journey);
-    renderFormacion(data.education);
-    renderPortfolio(data.projects);
-    renderContact(data.profile);
-    renderFooter(data.profile);
-    initScrollReveal();
-    initActiveNav();
-    initPdfDownload(data);
-    lucide.createIcons();
-  })
-  .catch(err => console.error('Error cargando data.json:', err));
+    renderMethodology(data.//...
+
 
 
 

@@ -83,7 +83,6 @@
       "items": [
         { "name": "Enterprise: Java 25, Spring Boot 4, Hibernate, Flyway, MinIO", "learning": false },
         { "name": "Agile: Node.js, Express, MongoDB, Redis, Prisma", "learning": false },
-        { "name": "Rapid: JS Vanilla, Vite", "learning": false },
         { "name": "PostgreSQL, REST APIs, Maven", "learning": false }
       ]
     },
@@ -93,6 +92,7 @@
       "items": [
         { "name": "Multiplatform: Flutter, Riverpod, Dio, Dart", "learning": false },
         { "name": "Web: Vue 3, TypeScript, React, Tailwind CSS", "learning": false },
+        { "name": "Rapid: JS Vanilla, Vite", "learning": false },
         { "name": "HTML/CSS", "learning": false }
       ]
     },
