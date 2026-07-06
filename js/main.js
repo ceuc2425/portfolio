@@ -108,18 +108,15 @@ function renderAbout(p, experience) {
   document.getElementById('about-bio').innerHTML = `
     <p>${p.bio_es}</p>
     <p>${p.bio_es2}</p>
-    <p>${p.bio_es3}</p>
-    <div class="hobbies-row">
-      ${p.hobbies.map(h => `<span class="hobby-tag">${h}</span>`).join('')}
-    </div>`;
-
+    <p>${p.bio_es3}</p>`;
+  
   if (p.philosophy) {
     document.getElementById('philosophy').innerHTML = `
       <div class="phil-label">Filosofía</div>
       <div class="phil-text">${p.philosophy}</div>
     `;
   }
-
+  
   if (p.how_i_work) {
     document.getElementById('how-i-work').innerHTML = `
       <div class="how-label">Cómo trabajo</div>
@@ -128,7 +125,7 @@ function renderAbout(p, experience) {
       </ul>
     `;
   }
-
+  
   document.getElementById('exp-list').innerHTML = experience.map(e => `
     <div class="exp-item reveal">
       <div class="exp-year">${e.period.split('–')[0].trim()}</div>
@@ -140,6 +137,23 @@ function renderAbout(p, experience) {
         </div>
       </div>
     </div>`).join('');
+}
+
+function renderPersonal(p) {
+  const info = p.personal_info;
+  if (!info) return;
+
+  document.getElementById('personal-data').innerHTML = `
+    <div class="data-item"><span class="data-label">Residencia/Permiso:</span> <span class="data-value">${info.residence_permit || '---'}</span></div>
+    <div class="data-item"><span class="data-label">Idiomas:</span> <span class="data-value">${info.languages.map(l => `${l.lang} (${l.level})`).join(', ')}</span></div>
+    <div class="data-item"><span class="data-label">Carnet/Coche:</span> <span class="data-value">${info.license || '---'} ${info.car ? '/ ' + info.car : ''}</span></div>
+    <div class="data-item"><span class="data-label">Dispon. Viajes:</span> <span class="data-value">${info.travel_available || '---'}</span></div>
+    <div class="data-item"><span class="data-label">Dispon. Traslado:</span> <span class="data-value">${info.relocation_available || '---'}</span></div>
+  `;
+
+  document.getElementById('hobbies-container').innerHTML = p.hobbies.map(h => `
+    <span class="hobby-tag">${h}</span>
+  `).join('');
 }
 
 

@@ -19,7 +19,18 @@
       "Uso la IA como un acelerador, nunca como sustituto del criterio técnico.",
       "Valido cada entrega contra requisitos reales y criterios de calidad estrictos."
     ],
-    "hobbies": ["Guitarra", "Ajedrez", "Baloncesto", "Programar"],
+    "hobbies": ["Diseñar", "Crear cosas nuevas", "Leer", "Juegos de estrategia"],
+    "personal_info": {
+      "residence_permit": "",
+      "languages": [
+        { "lang": "Español", "level": "Nativo" },
+        { "lang": "Inglés", "level": "Básico/Intermedio" }
+      ],
+      "license": "",
+      "car": "",
+      "travel_available": "",
+      "relocation_available": ""
+    },
     "available_for_internship": false,
     "cv_file": "Carlos_Urzola_CV_2026.pdf",
     "stats": [
