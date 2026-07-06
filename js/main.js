@@ -5,7 +5,8 @@
 fetch('data/data.json')
   .then(r => r.json())
   .then(data => {
-    renderHero(data.profile, data.stack);
+    renderHero(data.profile);
+    renderStack(data.stack);
     renderAbout(data.profile, data.experience);
     renderMethodology(data.methodology);
     renderAiJourney(data.ai_journey);
@@ -20,17 +21,13 @@ fetch('data/data.json')
     lucide.createIcons();
   })
   .catch(err => console.error('Error cargando data.json:', err));
+)
+  .catch(err => console.error('Error cargando data.json:', err));
 
 
 
 // ── HERO ──────────────────────────────────────────────────────
-function renderHero(p, stack) {
-  const badges = stack
-    .filter(c => c.category !== 'En aprendizaje')
-    .flatMap(c => c.items.filter(i => !i.learning))
-    .map(i => `<span class="hero-badge">${i.name}</span>`)
-    .join('');
-
+function renderHero(p) {
   const stats = p.stats.map(s => `
     <div class="stat-card">
       <div class="stat-num">${s.num}</div>
@@ -41,7 +38,7 @@ function renderHero(p, stack) {
     <div class="hero-left">
       <div class="hero-profile-container">
         <div class="hero-photo">
-          <img src="https://ui-avatars.com/api/?name=Carlos+Urzola&background=1A2E44&color=fff&size=256" alt="Carlos Urzola" id="profile-photo">
+          <img src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Carlos Urzola" id="profile-photo">
         </div>
       </div>
       ${p.available_for_internship ? `
@@ -50,7 +47,6 @@ function renderHero(p, stack) {
       </div>` : ''}
       <h1 class="hero-name">${p.name.split(' ')[0]}<br/><span>${p.name.split(' ')[1]}</span></h1>
       <p class="hero-title">${p.title_es}</p>
-      <div class="hero-badges">${badges}</div>
       <p class="hero-desc">${p.bio_es}</p>
       <div class="hero-cta">
         <a class="btn-primary cv-download-btn" href="#" download>↓ Descargar CV</a>
@@ -68,7 +64,30 @@ function renderHero(p, stack) {
 }
 
 
+
 // ── ABOUT + EXPERIENCIA ───────────────────────────────────────
+function renderStack(stack) {
+  const container = document.getElementById('stack-container');
+  if (!container || !stack) return;
+
+  container.innerHTML = stack.map(cat => `
+    <div class="stack-category">
+      <div class="stack-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="cat-title">${cat.category}</span>
+        <i data-lucide="chevron-down" class="cat-icon"></i>
+      </div>
+      <div class="stack-content">
+        <div class="stack-items">
+          ${cat.items.map(i => `<span class="skill-pill">${i.name}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+  
+  lucide.createIcons();
+}
+
+
 function renderAbout(p, experience) {
   document.getElementById('about-bio').innerHTML = `
     <p>${p.bio_es}</p>

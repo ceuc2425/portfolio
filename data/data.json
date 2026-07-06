@@ -45,19 +45,19 @@
       "phase": "01",
       "period": "2022 – 2023",
       "title": "Adopción",
-      "desc_es": "Descubrimiento de herramientas de IA aplicadas a desarrollo (editor + terminal). Automatización de tareas puntuales y generación de código asistido. Fase de adaptación rápida a nuevas herramientas de productividad."
+      "desc_es": "Descubrimiento de herramientas de IA aplicadas a desarrollo (editor + terminal). Automatización de tareas puntuales y generación de código asistido."
     },
     {
       "phase": "02",
       "period": "2023 – 2025",
       "title": "Orquestación",
-      "desc_es": "Transición de usuario a orquestador. Diseño de un framework propio (Agent Template) para estandarizar el abordaje de proyectos: definición de negocio, arquitectura, roadmap de tareas y protocolos de auditoría."
+      "desc_es": "Diseño de un framework propio (Agent Template) para estandarizar el abordaje de proyectos: negocio, arquitectura, tareas y auditoría."
     },
     {
       "phase": "03",
       "period": "2025 – Actualidad",
       "title": "Producción",
-      "desc_es": "Implementación de la 'Fábrica de Agentes' en proyectos reales. Especialización en la gestión de memoria por estados y eventos para optimizar la ventana de contexto y reducir el consumo de tokens sin perder la trazabilidad del proyecto.",
+      "desc_es": "Implementación de la 'Fábrica de Agentes'. Especialización en la gestión de memoria por estados y eventos para optimizar la ventana de contexto.",
       "quote": "Diseño sistemas donde la IA no sustituye el criterio humano; lo amplifica mediante contexto estructurado, memoria y procesos repetibles."
     }
   ],
@@ -105,19 +105,12 @@
       "category": "Backend",
       "color": "#f472b6",
       "items": [
-        { "name": "Java", "learning": false },
-        { "name": "Spring Boot", "learning": false },
-        { "name": "Spring Security", "learning": false },
-        { "name": "Hibernate", "learning": false },
-        { "name": "REST APIs", "learning": false },
-        { "name": "JWT", "learning": false }
-      ]
-    },
-    {
-      "category": "Data",
-      "color": "#fb923c",
-      "items": [
+        { "name": "Java / Spring Boot", "learning": false },
+        { "name": "Spring Security / JWT", "learning": false },
         { "name": "PostgreSQL", "learning": false },
+        { "name": "Hibernate (ORM)", "learning": false },
+        { "name": "REST APIs", "learning": false },
+        { "name": "Maven", "learning": false },
         { "name": "Redis", "learning": false }
       ]
     },
@@ -125,12 +118,8 @@
       "category": "DevOps",
       "color": "#a78bfa",
       "items": [
-        { "name": "Docker", "learning": false },
-        { "name": "Docker Compose", "learning": false },
-        { "name": "Git", "learning": false },
-        { "name": "GitHub", "learning": false },
-        { "name": "Linux", "learning": false },
-        { "name": "Bash", "learning": false },
+        { "name": "Linux / Bash", "learning": false },
+        { "name": "Git / GitHub", "learning": false },
         { "name": "Nginx", "learning": false },
         { "name": "AWS S3", "learning": false },
         { "name": "VPS Management", "learning": false }
@@ -141,8 +130,7 @@
       "color": "#38bdf8",
       "items": [
         { "name": "Flutter", "learning": false },
-        { "name": "TypeScript", "learning": false },
-        { "name": "React", "learning": false },
+        { "name": "TypeScript / React", "learning": false },
         { "name": "HTML/CSS", "learning": false }
       ]
     },
@@ -152,8 +140,7 @@
       "items": [
         { "name": "Figma", "learning": false },
         { "name": "Balsamiq", "learning": false },
-        { "name": "UML", "learning": false },
-        { "name": "Visio", "learning": false }
+        { "name": "UML / Visio", "learning": false }
       ]
     },
     {
