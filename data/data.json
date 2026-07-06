@@ -92,29 +92,74 @@
       "category": "Backend",
       "color": "#34d399",
       "items": [
-        { "name": "Enterprise: Java 25, Spring Boot 4, Hibernate, Flyway, MinIO", "learning": false },
-        { "name": "Agile: Node.js, Express, MongoDB, Redis, Prisma", "learning": false },
-        { "name": "PostgreSQL, REST APIs, Maven", "learning": false }
+        { "name": "Java 25", "learning": false },
+        { "name": "Node.js", "learning": false },
+        { "name": "C#", "learning": false },
+        { "name": "PHP", "learning": false },
+        { "name": "Python", "learning": false },
+        { "name": "Dart", "learning": false },
+        { "name": "Redis", "learning": false }
+      ]
+    },
+    {
+      "category": "Frameworks & ORMs",
+      "color": "#34d399",
+      "items": [
+        { "name": "Spring Boot 4", "learning": false },
+        { "name": "Hibernate", "learning": false },
+        { "name": "Prisma", "learning": false },
+        { "name": "Express", "learning": false },
+        { "name": "Maven", "learning": false },
+        { "name": "Flyway", "learning": false }
+      ]
+    },
+    {
+      "category": "Databases",
+      "color": "#34d399",
+      "items": [
+        { "name": "PostgreSQL", "learning": false },
+        { "name": "MySQL", "learning": false },
+        { "name": "SQL Server", "learning": false },
+        { "name": "MongoDB", "learning": false },
+        { "name": "Supabase", "learning": false }
       ]
     },
     {
       "category": "Frontend",
       "color": "#38bdf8",
       "items": [
-        { "name": "Multiplatform: Flutter, Riverpod, Dio, Dart", "learning": false },
-        { "name": "Web: Vue 3, TypeScript, React, Tailwind CSS", "learning": false },
-        { "name": "Rapid: JS Vanilla, Vite", "learning": false },
+        { "name": "Flutter", "learning": false },
+        { "name": "Riverpod", "learning": false },
+        { "name": "Dio", "learning": false },
+        { "name": "Vue 3", "learning": false },
+        { "name": "TypeScript", "learning": false },
+        { "name": "React", "learning": false },
+        { "name": "Tailwind CSS", "learning": false },
+        { "name": "JS Vanilla", "learning": false },
+        { "name": "Vite", "learning": false },
         { "name": "HTML/CSS", "learning": false }
+      ]
+    },
+    {
+      "category": "Communication & Protocols",
+      "color": "#38bdf8",
+      "items": [
+        { "name": "REST", "learning": false },
+        { "name": "GraphQL", "learning": false },
+        { "name": "gRPC", "learning": false },
+        { "name": "WebSockets", "learning": false },
+        { "name": "Apache Kafka", "learning": false }
       ]
     },
     {
       "category": "DevOps & Infra",
       "color": "#a78bfa",
       "items": [
-        { "name": "Cloud Ops: VPS Linux, Nginx, SSL, DNS, Dominios", "learning": false },
-        { "name": "Containerization: Docker, Docker Compose", "learning": false },
-        { "name": "Data Integrity: DB Backups, Monitoring", "learning": false },
-        { "name": "Git / GitHub", "learning": false }
+        { "name": "Cloud Ops: VPS Linux, Nginx, SSL, DNS", "learning": false },
+        { "name": "Docker", "learning": false },
+        { "name": "DB Backups", "learning": false },
+        { "name": "Git / GitHub", "learning": false },
+        { "name": "Linux / Bash", "learning": false }
       ]
     },
     {
@@ -122,8 +167,8 @@
       "color": "#22d3ee",
       "items": [
         { "name": "Agent Orchestration", "learning": false },
-        { "name": "RAG (Retrieval-Augmented Generation)", "learning": false },
-        { "name": "MCP (Model Context Protocol)", "learning": false },
+        { "name": "RAG", "learning": false },
+        { "name": "MCP", "learning": false },
         { "name": "Prompt Engineering", "learning": false },
         { "name": "LLM Workflow Design", "learning": false }
       ]
@@ -132,9 +177,15 @@
       "category": "Toolstack",
       "color": "#f9a8d4",
       "items": [
-        { "name": "Bruno, Postman, Thunder Client", "learning": false },
-        { "name": "Draw.io, Notion, Jira", "learning": false },
-        { "name": "IntelliJ IDEA, VS Code", "learning": false }
+        { "name": "Visual Studio", "learning": false },
+        { "name": "VS Code", "learning": false },
+        { "name": "IntelliJ IDEA", "learning": false },
+        { "name": "Unity", "learning": false },
+        { "name": "Bruno", "learning": false },
+        { "name": "Postman", "learning": false },
+        { "name": "Draw.io", "learning": false },
+        { "name": "Notion", "learning": false },
+        { "name": "Jira", "learning": false }
       ]
     },
     {
