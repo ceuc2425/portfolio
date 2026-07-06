@@ -18,29 +18,55 @@ function initThemeToggle() {
   });
 }
 
-// Initialize theme and icons immediately to ensure UI elements are visible
+// Initialize theme immediately
 initThemeToggle();
-lucide.createIcons();
+
+// Safe render wrapper to prevent one failure from breaking the whole site
+function safeRender(fn, ...args) {
+  try {
+    fn(...args);
+  } catch (e) {
+    console.error(`Error in ${fn.name}:`, e);
+  }
+}
 
 fetch('data/data.json')
-  .then(r => r.json())
+  .then(r => {
+    if (!r.ok) throw new Error('Network response was not ok');
+    return r.json();
+  })
   .then(data => {
-    renderHero(data.profile);
-    renderStack(data.stack);
-    renderPersonal(data.profile);
-    renderAbout(data.profile, data.experience);
-    renderPortfolio(data.projects);
-    renderFormacion(data.education);
-    renderMethodology(data.methodology);
-    renderAiJourney(data.ai_journey);
-    renderContact(data.profile);
-    renderFooter(data.profile);
+    console.log('Data loaded successfully');
+    
+    // Run critical UI initialization first
     initScrollReveal();
     initActiveNav();
-    initPdfDownload(data);
-    lucide.createIcons();
+    
+    // Render all sections safely
+    safeRender(renderHero, data.profile);
+    safeRender(renderStack, data.stack);
+    safeRender(renderPersonal, data.profile);
+    safeRender(renderAbout, data.profile, data.experience);
+    safeRender(renderPortfolio, data.projects);
+    safeRender(renderFormacion, data.education);
+    safeRender(renderMethodology, data.methodology);
+    safeRender(renderAiJourney, data.ai_journey);
+    safeRender(renderContact, data.profile);
+    safeRender(renderFooter, data.profile);
+    
+    safeRender(initPdfDownload, data);
+    
+    // Final icon pass
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   })
-  .catch(err => console.error('Error cargando data.json:', err));
+  .catch(err => {
+    console.error('CRITICAL ERROR loading data.json:', err);
+    // Fallback: make everything visible even if JS fails
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  });
+
 
 
 
