@@ -269,7 +269,14 @@ section:not(#hero) { border-top: 1px solid var(--border); }
 }
 .stack-items {
   padding: 1rem 1.2rem;
-  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.stack-item-row {
+  font-family: var(--mono); font-size: 0.75rem;
+  color: var(--muted); line-height: 1.5;
+}
+.stack-item-row strong {
+  color: var(--navy); font-weight: 700;
 }
 .skill-pill {
   font-family: var(--mono); font-size: 0.65rem;

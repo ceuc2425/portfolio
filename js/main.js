@@ -86,19 +86,28 @@ function renderStack(stack) {
   const container = document.getElementById('stack-container');
   if (!container || !stack) return;
 
-  container.innerHTML = stack.map(cat => `
-    <div class="stack-category">
-      <div class="stack-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cat-title">${cat.category}</span>
-        <i data-lucide="chevron-down" class="cat-icon"></i>
-      </div>
-      <div class="stack-content">
-        <div class="stack-items">
-          ${cat.items.map(i => `<span class="skill-pill">${i.name}</span>`).join('')}
+  container.innerHTML = stack.map(cat => {
+    const itemsHtml = cat.items.map(i => {
+      if (i.name.includes(':')) {
+        const [prefix, content] = i.name.split(':');
+        return `<div class="stack-item-row"><strong>${prefix}:</strong> ${content}</div>`;
+      }
+      return `<span class="skill-pill">${i.name}</span>`;
+    }).join('');
+
+    return `
+      <div class="stack-category">
+        <div class="stack-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="cat-title">${cat.category}</span>
+          <i data-lucide="chevron-down" class="cat-icon"></i>
         </div>
-      </div>
-    </div>
-  `).join('');
+        <div class="stack-content">
+          <div class="stack-items">
+            ${itemsHtml}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
   
   lucide.createIcons();
 }
