@@ -552,7 +552,7 @@ section:not(#hero) { border-top: 1px solid var(--border); }
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid rgba(255,255,255,0.1);
-  background: var(--navy);
+  background: var(--hero-navy);
   padding: 1.5rem clamp(1.5rem,5vw,6rem);
   display:flex; justify-content:space-between; align-items:center;
   font-family: var(--mono); font-size:0.68rem; color:rgba(255,255,255,0.35);
