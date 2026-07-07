@@ -219,7 +219,7 @@ function renderFormacion(education) {
       <div>
         <div class="edu-title">${e.title}</div>
         <div class="edu-institution">${e.institution}</div>
-        <span class="edu-level${e.current ? ' current-badge' : ''}">${e.current ? 'En curso — prácticas pendientes' : e.level}</span>
+        <span class="edu-level${e.current ? ' current-badge' : ''}">${e.current ? 'En curso' : e.level}</span>
       </div>
     </div>`).join('');
 }
@@ -241,8 +241,9 @@ function renderMethodology(methodology) {
 
 // ── PORTFOLIO ─────────────────────────────────────────────────
 function renderPortfolio(projects) {
-  const statusLabel = { wip:'🔧 En construcción', live:'🟢 Live', professional:'💼 Proyecto profesional' };
+  const statusLabel = { wip:'En construcción', live:'Live', professional:'Proyecto profesional' };
   const statusClass = { wip:'status-wip', live:'status-live', professional:'status-professional' };
+
 
   const cards = projects.map(p => `
     <div class="project-card reveal">
