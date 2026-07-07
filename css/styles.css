@@ -10,6 +10,8 @@
 :root {
   --navy:    #1A2E44;
   --navy2:   #243d5c;
+  --hero-navy: #1A2E44;
+  --hero-navy2: #243d5c;
   --blue:    #2563EB;
   --bg:      #ffffff;
   --bg2:     #f8fafc;
@@ -35,6 +37,8 @@
   --light:   #64748b;
   --navy:    #f8fafc;
   --navy2:   #e2e8f0;
+  --hero-navy: #0f172a;
+  --hero-navy2: #1e293b;
 }
 
 html { scroll-behavior: smooth; }
@@ -173,7 +177,7 @@ section:not(#hero) { border-top: 1px solid var(--border); }
   display: grid; grid-template-columns: 1.1fr 0.9fr;
   align-items: center; gap: 3rem;
   padding-top: 80px;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  background: linear-gradient(135deg, var(--hero-navy) 0%, var(--hero-navy2) 100%);
   position: relative; overflow: hidden;
 }
 #hero::before {
