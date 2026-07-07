@@ -13,6 +13,15 @@ async function initV2() {
       <a href="https://${p.linkedin}" target="_blank">${p.linkedin}</a>
     `;
 
+    // Personal Info Section
+    const info = p.personal_info;
+    document.getElementById('v2-personal').innerHTML = `
+      <div><strong>Residencia/Permiso:</strong> ${info.residence_permit || '---'}</div>
+      <div><strong>Idiomas:</strong> ${info.languages.map(l => `${l.lang} (${l.level})`).join(', ')}</div>
+      <div><strong>Carnet/Coche:</strong> ${info.license || '---'} ${info.car ? '/ ' + info.car : ''}</div>
+      <div><strong>Disponibilidad:</strong> Viajes: ${info.travel_available || '---'}, Traslado: ${info.relocation_available || '---'}</div>
+    `;
+
     document.getElementById('v2-profile').innerHTML = `
       ${p.bio_es}<br><br>
       ${p.bio_es2}<br><br>
@@ -33,10 +42,21 @@ async function initV2() {
       </div>
     `).join('');
 
-    document.getElementById('v2-education').innerHTML = data.education.map(e => `
+    // Education Split: Main vs Others
+    const mainEdu = data.education.slice(0, 3);
+    const otherEdu = data.education.slice(3);
+
+    document.getElementById('v2-education').innerHTML = mainEdu.map(e => `
       <div class="cv-edu-item">
         <div class="cv-edu-main">${e.title} - ${e.institution}</div>
         <div class="cv-edu-sub">${e.year} ${e.current ? '(En curso)' : ''}</div>
+      </div>
+    `).join('');
+
+    document.getElementById('v2-education-others').innerHTML = otherEdu.map(e => `
+      <div class="cv-edu-item">
+        <div class="cv-edu-main">${e.title}</div>
+        <div class="cv-edu-sub">${e.institution} (${e.year})</div>
       </div>
     `).join('');
 

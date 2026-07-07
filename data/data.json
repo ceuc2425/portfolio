@@ -21,15 +21,15 @@
     ],
     "hobbies": ["Diseñar", "Crear cosas nuevas", "Leer", "Juegos de estrategia"],
     "personal_info": {
-      "residence_permit": "",
+      "residence_permit": "En trámite / Disponible",
       "languages": [
         { "lang": "Español", "level": "Nativo" },
         { "lang": "Inglés", "level": "Básico/Intermedio" }
       ],
-      "license": "",
-      "car": "",
-      "travel_available": "",
-      "relocation_available": ""
+      "license": "B",
+      "car": "Sí",
+      "travel_available": "Sí",
+      "relocation_available": "Sí"
     },
     "available_for_internship": false,
     "cv_file": "Carlos_Urzola_CV_2026.pdf",
@@ -380,11 +380,18 @@
       "modules": "Java · Spring Boot · Flutter · Dart · PostgreSQL · SQL Server · MongoDB · JavaScript · Node.js · Android Studio · Figma · Diseño de Interfaces · Acceso a Datos · Programación Multimedia · C# · Python · Unity"
     },
     { "year": 2022, "title": "Calidad en el Desarrollo de Software", "institution": "SENA", "level": "Curso", "current": false },
+    { "year": 2022, "title": "Nanotecnología y Aplicaciones", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2022, "title": "Desarrollo Web con PHP", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2021, "title": "HTML5, CSS3 y JavaScript 1 & 2", "institution": "FORM@CARM — Murcia", "level": "Curso", "current": false },
     { "year": 2021, "title": "Programación", "institution": "EDteam", "level": "Curso", "current": false },
     { "year": 2016, "title": "Derecho Laboral", "institution": "Politécnico de Colombia", "level": "Curso", "current": false },
     { "year": 2016, "title": "Contabilización de Operaciones de la Empresa", "institution": "SENA", "level": "Curso", "current": false },
-    { "year": 2012, "title": "Administración de Empresas", "institution": "Universidad Antonio Nariño", "level": "Profesional", "current": false }
+    { "year": 2012, "title": "Administración de Empresas", "institution": "Universidad Antonio Nariño", "level": "Profesional", "current": false },
+    { "year": 2012, "title": "Administración y Control de Inventarios", "institution": "SENA", "level": "Curso", "current": false },
+    { "year": 2012, "title": "Contabilidad en las Organizaciones", "institution": "SENA", "level": "Curso", "current": false },
+    { "year": 2011, "title": "Análisis Financiero", "institution": "SENA", "level": "Curso", "current": false },
+    { "year": 2011, "title": "Informática Básica", "institution": "SENA", "level": "Curso", "current": false },
+    { "year": 2011, "title": "Auxiliar Contable", "institution": "Campoalto", "level": "Técnico", "current": false },
+    { "year": 2006, "title": "Bachiller Académico Técnico", "institution": "Instituto Ferrini", "level": "Bachillerato", "current": false }
   ]
 }
