@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Urzola — Minimalist CV</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="v2-mode">
+  <nav>
+    <span class="nav-logo">Carlos <span>Urzola</span></span>
+    <div class="nav-links">
+      <a href="index.html">← Volver al Portfolio</a>
+    </div>
+  </nav>
+
+  <section id="hero" style="background: var(--bg); color: var(--text); min-height: auto; padding: 100px 2rem 50px; display: block; text-align: center;">
+    <h1 class="hero-name" style="color: var(--navy); font-size: 3rem; margin-bottom: 1rem;">Carlos Urzola</h1>
+    <p class="hero-title" style="color: var(--muted); font-size: 1.2rem; margin-bottom: 2rem;">Technical Product Manager · AI Solutions Architect</p>
+    <div class="hero-cta" style="justify-content: center;">
+      <a class="btn-primary cv-download-btn" href="#" download>↓ Descargar CV ATS</a>
+    </div>
+  </section>
+
+  <section id="about" style="display: block; max-width: 800px; margin: 0 auto;">
+    <div class="section-label">Perfil Profesional</div>
+    <div id="v2-bio" style="font-size: 1.1rem; line-height: 1.8; color: var(--muted); margin-bottom: 3rem;"></div>
+    
+    <div class="section-label">Experiencia Seleccionada</div>
+    <div id="v2-exp-list" class="exp-list"></div>
+    
+    <div class="section-label" style="margin-top: 3rem;">Formación Principal</div>
+    <div id="v2-edu-list" class="edu-list"></div>
+  </section>
+
+  <footer id="footer" style="background: var(--bg); border-top: 1px solid var(--border); color: var(--muted);">
+    <span>© 2026 Carlos Urzola</span>
+  </footer>
+
+  <script src="js/main2.js"></script>
+</body>
+</html>

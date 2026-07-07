@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════
    CARLOS URZOLA — main.js
-═══════════════════════════════════════ */
+ ═══════════════════════════════ */
 
 // ── THEME & INIT ────────────────────────────────────────────────
 function initThemeToggle() {
@@ -66,10 +66,6 @@ fetch('data/data.json')
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   });
 
-
-
-
-
 // ── HERO ──────────────────────────────────────────────────────
 function renderHero(p) {
   const stats = p.stats.map(s => `
@@ -94,6 +90,7 @@ function renderHero(p) {
       <p class="hero-desc">${p.bio_es}</p>
       <div class="hero-cta">
         <a class="btn-primary cv-download-btn" href="#" download>↓ Descargar CV</a>
+        <a href="index2.html" class="btn-version" style="text-decoration: none; display: inline-flex; align-items: center;">Ver Versión 2</a>
         <a class="btn-outline" href="#portfolio">Ver proyectos →</a>
       </div>
     </div>
@@ -107,9 +104,6 @@ function renderHero(p) {
     </div>`;
 }
 
-
-
-// ── ABOUT + EXPERIENCIA ───────────────────────────────────────
 function renderStack(stack) {
   const container = document.getElementById('stack-container');
   if (!container || !stack) return;
@@ -140,7 +134,6 @@ function renderStack(stack) {
   lucide.createIcons();
 }
 
-
 function renderAbout(p, experience) {
   document.getElementById('about-bio').innerHTML = `
     <p>${p.bio_es}</p>
@@ -163,7 +156,10 @@ function renderAbout(p, experience) {
     `;
   }
   
-  document.getElementById('exp-list').innerHTML = experience.map(e => `
+  const mainExp = experience.slice(0, 3);
+  const othersExp = experience.slice(3);
+  
+  const renderExpItem = (e) => `
     <div class="exp-item reveal">
       <div class="exp-year">${e.period.split('–')[0].trim()}</div>
       <div>
@@ -173,7 +169,21 @@ function renderAbout(p, experience) {
           ${e.tags.map(t => `<span class="exp-tag">${t}</span>`).join('')}
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+
+  let expHtml = mainExp.map(renderExpItem).join('');
+  
+  if (othersExp.length > 0) {
+    expHtml += `
+      <details class="exp-others">
+        <summary>Ver ${othersExp.length} experiencias adicionales</summary>
+        <div class="exp-others-content">
+          ${othersExp.map(renderExpItem).join('')}
+        </div>
+      </details>`;
+  }
+  
+  document.getElementById('exp-list').innerHTML = expHtml;
 }
 
 function renderPersonal(p) {
@@ -193,8 +203,6 @@ function renderPersonal(p) {
   `).join('');
 }
 
-
-// ── EVOLUCIÓN IA ──────────────────────────────────────────────
 function renderAiJourney(journey) {
   const el = document.getElementById('ai-journey-list');
   if (!el || !journey) return;
@@ -210,10 +218,11 @@ function renderAiJourney(journey) {
     </div>`).join('');
 }
 
-
-// ── FORMACIÓN ─────────────────────────────────────────────────
 function renderFormacion(education) {
-  document.getElementById('edu-list').innerHTML = education.map(e => `
+  const mainEdu = education.slice(0, 3);
+  const othersEdu = education.slice(3);
+  
+  const renderEduItem = (e) => `
     <div class="edu-item${e.current ? ' current' : ''}">
       <div class="edu-year">${e.year}</div>
       <div>
@@ -221,11 +230,23 @@ function renderFormacion(education) {
         <div class="edu-institution">${e.institution}</div>
         <span class="edu-level${e.current ? ' current-badge' : ''}">${e.current ? 'En curso' : e.level}</span>
       </div>
-    </div>`).join('');
+    </div>`;
+
+  let eduHtml = mainEdu.map(renderEduItem).join('');
+  
+  if (othersEdu.length > 0) {
+    eduHtml += `
+      <details class="edu-others">
+        <summary>Ver otros estudios y certificados (${othersEdu.length})</summary>
+        <div class="edu-others-content">
+          ${othersEdu.map(renderEduItem).join('')}
+        </div>
+      </details>`;
+  }
+  
+  document.getElementById('edu-list').innerHTML = eduHtml;
 }
 
-
-// ── METODOLOGÍA ────────────────────────────────────────────────
 function renderMethodology(methodology) {
   const el = document.getElementById('methodology-grid');
   if (!el || !methodology) return;
@@ -239,11 +260,9 @@ function renderMethodology(methodology) {
     </div>`).join('');
 }
 
-// ── PORTFOLIO ─────────────────────────────────────────────────
 function renderPortfolio(projects) {
   const statusLabel = { wip:'En construcción', live:'Live', professional:'Proyecto profesional' };
   const statusClass = { wip:'status-wip', live:'status-live', professional:'status-professional' };
-
 
   const cards = projects.map(p => `
     <div class="project-card reveal">
@@ -292,8 +311,6 @@ function renderPortfolio(projects) {
   document.getElementById('projects-grid').innerHTML = cards;
 }
 
-
-// ── CONTACT ───────────────────────────────────────────────────
 function renderContact(p) {
   document.getElementById('contact-links').innerHTML = `
     <a class="contact-link" href="mailto:${p.email}">
@@ -318,20 +335,12 @@ function renderContact(p) {
     </div>`;
 }
 
-
-// ── FOOTER ────────────────────────────────────────────────────
 function renderFooter(p) {
   document.getElementById('footer').innerHTML = `
     <span>© ${new Date().getFullYear()} ${p.name}</span>
     <span>HTML · CSS · JS — sin frameworks</span>`;
 }
 
-
-// ── PDF DESDE LOS DATOS (siempre actualizado) ─────────────────
-// En lugar de servir un PDF estático, generamos el PDF desde el
-// contenido ya renderizado en la página usando el diálogo de
-// impresión del navegador ("Guardar como PDF"). El CSS de impresión
-// (@media print en styles.css) reordena la página en formato documento.
 function initPdfDownload(data) {
   const btns = document.querySelectorAll('.cv-download-btn');
   if (!btns.length) return;
@@ -384,9 +393,6 @@ function initPdfDownload(data) {
   }));
 }
 
-
-
-// ── SCROLL REVEAL ─────────────────────────────────────────────
 function initScrollReveal() {
   const obs = new IntersectionObserver(
     es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
@@ -395,8 +401,6 @@ function initScrollReveal() {
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
-
-// ── ACTIVE NAV ────────────────────────────────────────────────
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const links    = document.querySelectorAll('.nav-links a');

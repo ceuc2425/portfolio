@@ -98,6 +98,25 @@ nav {
   font-weight: 600; color: var(--muted); text-decoration: none;
   transition: color 0.2s; position: relative; padding-bottom: 2px;
 }
+.btn-version {
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 700;
+  color: var(--navy); background: var(--bg3); border: 1px solid var(--border);
+  padding: 0.85rem 1.2rem; border-radius: 3px; cursor: pointer;
+  transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.05em;
+  text-decoration: none; display: inline-flex; align-items: center;
+}
+.btn-version:hover { background: var(--border); border-color: var(--blue); transform: translateY(-2px); }
+
+[data-theme="dark"] .btn-version {
+  color: var(--text);
+  background: var(--bg3);
+  border-color: var(--border2);
+}
+[data-theme="dark"] .btn-version:hover {
+  background: var(--bg2);
+  border-color: var(--blue);
+}
+
 .nav-links a::after {
   content:''; position: absolute; bottom:-2px; left:0; right:0;
   height: 2px; background: var(--navy);
@@ -335,24 +354,43 @@ section:not(#hero) { border-top: 1px solid var(--border); }
 }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: #ffffff; color: var(--navy);
+  background: var(--bg); color: var(--navy);
   font-family: var(--sans); font-weight: 700; font-size: 0.78rem;
   letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.85rem 1.8rem; border-radius: 3px;
-  text-decoration: none; border: none; cursor: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none; border: 1px solid var(--border); cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+[data-theme="dark"] .btn-primary {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+[data-theme="dark"] .btn-primary:hover {
+  background: #2563eb;
+}
+
 .btn-outline {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: transparent; color: rgba(255,255,255,0.85);
   font-family: var(--sans); font-weight: 600; font-size: 0.78rem;
   letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.85rem 1.8rem; border-radius: 3px;
-  text-decoration: none; border: 1px solid rgba(255,255,255,0.25); cursor: none;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+[data-theme="dark"] .btn-outline {
+  color: var(--text);
+  border-color: var(--border);
+}
+[data-theme="dark"] .btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
 
 /* ── ABOUT ── */
 #about { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; background: var(--bg); }
@@ -416,6 +454,26 @@ section:not(#hero) { border-top: 1px solid var(--border); }
   font-family: var(--mono); font-size: 0.6rem;
   background: var(--bg3); border: 1px solid var(--border);
   color: var(--muted); padding: 0.1rem 0.45rem; border-radius: 2px;
+}
+
+.exp-others, .edu-others {
+  margin-top: 1rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.exp-others summary, .edu-others summary {
+  padding: 0.7rem 1rem;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
+  color: var(--muted); cursor: pointer;
+  user-select: none; transition: background 0.2s, color 0.2s;
+}
+.exp-others summary:hover, .edu-others summary:hover {
+  background: var(--bg3); color: var(--navy);
+}
+.exp-others-content, .edu-others-content {
+  padding: 0 0.5rem 1rem 0.5rem;
 }
 
 /* ── EVOLUCIÓN IA ── */
@@ -559,6 +617,22 @@ footer {
   flex-wrap:wrap; gap:1rem;
 }
 footer span:first-child { font-family: var(--serif); font-size:0.85rem; color:rgba(255,255,255,0.6); }
+
+/* ── VERSION 2 MODE ── */
+body.v2-mode {
+  --blue: #3b82f6;
+  --navy: #0f172a;
+}
+body.v2-mode .section-title {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+body.v2-mode .hero-name {
+  color: #ffffff;
+}
+body.v2-mode .hero-name span {
+  color: #60a5fa;
+}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
