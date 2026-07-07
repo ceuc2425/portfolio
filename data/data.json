@@ -387,6 +387,7 @@
     { "year": 2016, "title": "Derecho Laboral", "institution": "Politécnico de Colombia", "level": "Curso", "current": false },
     { "year": 2016, "title": "Contabilización de Operaciones de la Empresa", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2012, "title": "Administración de Empresas", "institution": "Universidad Antonio Nariño", "level": "Profesional", "current": false },
+    { "year": 2012, "title": "Administración de negocios internacionales", "institution": "Corporación Universitaria Remington", "level": "Profesional", "current": false },
     { "year": 2012, "title": "Administración y Control de Inventarios", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2012, "title": "Contabilidad en las Organizaciones", "institution": "SENA", "level": "Curso", "current": false },
     { "year": 2011, "title": "Análisis Financiero", "institution": "SENA", "level": "Curso", "current": false },
