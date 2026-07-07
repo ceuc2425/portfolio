@@ -42,14 +42,29 @@ async function initV2() {
       </div>
     `).join('');
 
-    // Education Split: Main vs Others
-    const mainEdu = data.education.slice(0, 3);
-    const otherEdu = data.education.slice(3);
+    // Education Categorization
+    const professionalLevels = ['Profesional', 'CFGS', 'Técnico'];
+    const techKeywords = ['programación', 'web', 'php', 'javascript', 'html', 'css', 'java', 'software', 'multiplataforma', 'digital'];
 
-    document.getElementById('v2-education').innerHTML = mainEdu.map(e => `
+    const mainEdu = data.education.filter(e => professionalLevels.includes(e.level));
+    const techEdu = data.education.filter(e => e.level === 'Curso' && 
+      techKeywords.some(kw => e.title.toLowerCase().includes(kw)));
+    const otherEdu = data.education.filter(e => 
+      !professionalLevels.includes(e.level) && 
+      !(e.level === 'Curso' && techKeywords.some(kw => e.title.toLowerCase().includes(kw)))
+    );
+
+    document.getElementById('v2-education-main').innerHTML = mainEdu.map(e => `
       <div class="cv-edu-item">
         <div class="cv-edu-main">${e.title} - ${e.institution}</div>
         <div class="cv-edu-sub">${e.year} ${e.current ? '(En curso)' : ''}</div>
+      </div>
+    `).join('');
+
+    document.getElementById('v2-education-tech').innerHTML = techEdu.map(e => `
+      <div class="cv-edu-item">
+        <div class="cv-edu-main">${e.title}</div>
+        <div class="cv-edu-sub">${e.institution} (${e.year})</div>
       </div>
     `).join('');
 
