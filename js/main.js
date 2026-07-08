@@ -90,8 +90,8 @@ function renderHero(p) {
       <p class="hero-desc">${p.bio_es}</p>
 // ... (inside renderHero function)
       <div class="hero-cta">
-        <a class="btn-primary cv-download-btn" href="#" download>↓ Descargar CV</a>
-        <a href="index2.html" class="btn-version" style="text-decoration: none; display: inline-flex; align-items: center;">Ver CV Vite 2026</a>
+        <a href="index2.html" class="btn-primary" style="text-decoration: none;">Ver CV Vite 2026</a>
+        <a class="btn-version cv-download-btn" href="#" download style="text-decoration: none; display: inline-flex; align-items: center;">↓ Descargar CV</a>
         <a class="btn-outline" href="#portfolio">Ver proyectos →</a>
       </div>
 // ...
