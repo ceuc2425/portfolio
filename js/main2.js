@@ -16,8 +16,7 @@ async function initV2() {
     document.getElementById('v2-personal').innerHTML = `
       <div><strong>Residencia/Permiso:</strong> ${p.personal_info.residence_permit || '---'}</div>
       <div><strong>Idiomas:</strong> ${p.personal_info.languages.map(l => `${l.lang} (${l.level})`).join(', ')}</div>
-      <div><strong>Carnet/Coche:</strong> ${p.// Corrected to access from p.personal_info
-      p.personal_info.license || '---'} ${p.personal_info.car ? '/ ' + p.personal_info.car : ''}</div>
+      <div><strong>Carnet/Coche:</strong> ${p.personal_info.license || '---'} ${p.personal_info.car ? '/ ' + p.personal_info.car : ''}</div>
       <div><strong>Disponibilidad:</strong> Viajes: ${p.personal_info.travel_available || '---'}, Traslado: ${p.personal_info.relocation_available || '---'}</div>
     `;
 
@@ -58,32 +57,11 @@ async function initV2() {
       </div>
     `).join('');
 
-    // TIER-BASED SKILLS CLASSIFICATION
-    const tiers = {
-      "Enterprise (Sistemas Críticos)": ["Java", "Spring Boot", "Flutter", "PostgreSQL", "Multi-tenant", "Idempotency", "SaaS", "Architecture"],
-      "Agile (Desarrollo Rápido)": ["Node.js", "MongoDB", "Express", "React", "Vue", "TypeScript"],
-      "Rapid (Prototipado)": ["Vite", "JS Vanilla", "HTML/CSS", "Tailwind"]
-    };
-
-    let skillsHtml = '';
-    for (const [tier, keywords] of Object.entries(tiers)) {
-      const matchedSkills = [];
-      data.stack.forEach(cat => {
-        cat.items.forEach(item => {
-          if (keywords.some(kw => item.name.toLowerCase().includes(kw.toLowerCase()))) {
-            matchedSkills.push(item.name);
-          }
-        });
-      });
-
-      if (matchedSkills.length > 0) {
-        skillsHtml += `
-          <div class="cv-skill-tier">
-            <strong>${tier}:</strong> ${matchedSkills.join(' · ')}
-          </div>`;
-      }
-    }
-    document.getElementById('v2-skills').innerHTML = skillsHtml;
+    document.getElementById('v2-skills').innerHTML = data.stack.map(cat => `
+      <div class="cv-skill-cat">
+        <strong>${cat.category}:</strong> ${cat.items.map(i => i.name).join(', ')}
+      </div>
+    `).join('');
 
   } catch (e) {
     console.error('Error loading V2:', e);
