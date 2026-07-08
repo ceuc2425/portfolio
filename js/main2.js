@@ -13,13 +13,12 @@ async function initV2() {
       <a href="https://${p.linkedin}" target="_blank">${p.linkedin}</a>
     `;
 
-    // Personal Info Section
-    const info = p.personal_info;
     document.getElementById('v2-personal').innerHTML = `
-      <div><strong>Residencia/Permiso:</strong> ${info.residence_permit || '---'}</div>
-      <div><strong>Idiomas:</strong> ${info.languages.map(l => `${l.lang} (${l.level})`).join(', ')}</div>
-      <div><strong>Carnet/Coche:</strong> ${info.license || '---'} ${info.car ? '/ ' + info.car : ''}</div>
-      <div><strong>Disponibilidad:</strong> Viajes: ${info.travel_available || '---'}, Traslado: ${info.relocation_available || '---'}</div>
+      <div><strong>Residencia/Permiso:</strong> ${p.personal_info.residence_permit || '---'}</div>
+      <div><strong>Idiomas:</strong> ${p.personal_info.languages.map(l => `${l.lang} (${l.level})`).join(', ')}</div>
+      <div><strong>Carnet/Coche:</strong> ${p.// Corrected to access from p.personal_info
+      p.personal_info.license || '---'} ${p.personal_info.car ? '/ ' + p.personal_info.car : ''}</div>
+      <div><strong>Disponibilidad:</strong> Viajes: ${p.personal_info.travel_available || '---'}, Traslado: ${p.personal_info.relocation_available || '---'}</div>
     `;
 
     document.getElementById('v2-profile').innerHTML = `
@@ -42,29 +41,13 @@ async function initV2() {
       </div>
     `).join('');
 
-    // Education Categorization
-    const professionalLevels = ['Profesional', 'CFGS', 'Técnico'];
-    const techKeywords = ['programación', 'web', 'php', 'javascript', 'html', 'css', 'java', 'software', 'multiplataforma', 'digital'];
+    const mainEdu = data.education.slice(0, 3);
+    const otherEdu = data.education.slice(3);
 
-    const mainEdu = data.education.filter(e => professionalLevels.includes(e.level));
-    const techEdu = data.education.filter(e => e.level === 'Curso' && 
-      techKeywords.some(kw => e.title.toLowerCase().includes(kw)));
-    const otherEdu = data.education.filter(e => 
-      !professionalLevels.includes(e.level) && 
-      !(e.level === 'Curso' && techKeywords.some(kw => e.title.toLowerCase().includes(kw)))
-    );
-
-    document.getElementById('v2-education-main').innerHTML = mainEdu.map(e => `
+    document.getElementById('v2-education').innerHTML = mainEdu.map(e => `
       <div class="cv-edu-item">
         <div class="cv-edu-main">${e.title} - ${e.institution}</div>
         <div class="cv-edu-sub">${e.year} ${e.current ? '(En curso)' : ''}</div>
-      </div>
-    `).join('');
-
-    document.getElementById('v2-education-tech').innerHTML = techEdu.map(e => `
-      <div class="cv-edu-item">
-        <div class="cv-edu-main">${e.title}</div>
-        <div class="cv-edu-sub">${e.institution} (${e.year})</div>
       </div>
     `).join('');
 
@@ -75,11 +58,32 @@ async function initV2() {
       </div>
     `).join('');
 
-    document.getElementById('v2-skills').innerHTML = data.stack.map(cat => `
-      <div class="cv-skill-cat">
-        <strong>${cat.category}:</strong> ${cat.items.map(i => i.name).join(', ')}
-      </div>
-    `).join('');
+    // TIER-BASED SKILLS CLASSIFICATION
+    const tiers = {
+      "Enterprise (Sistemas Críticos)": ["Java", "Spring Boot", "Flutter", "PostgreSQL", "Multi-tenant", "Idempotency", "SaaS", "Architecture"],
+      "Agile (Desarrollo Rápido)": ["Node.js", "MongoDB", "Express", "React", "Vue", "TypeScript"],
+      "Rapid (Prototipado)": ["Vite", "JS Vanilla", "HTML/CSS", "Tailwind"]
+    };
+
+    let skillsHtml = '';
+    for (const [tier, keywords] of Object.entries(tiers)) {
+      const matchedSkills = [];
+      data.stack.forEach(cat => {
+        cat.items.forEach(item => {
+          if (keywords.some(kw => item.name.toLowerCase().includes(kw.toLowerCase()))) {
+            matchedSkills.push(item.name);
+          }
+        });
+      });
+
+      if (matchedSkills.length > 0) {
+        skillsHtml += `
+          <div class="cv-skill-tier">
+            <strong>${tier}:</strong> ${matchedSkills.join(' · ')}
+          </div>`;
+      }
+    }
+    document.getElementById('v2-skills').innerHTML = skillsHtml;
 
   } catch (e) {
     console.error('Error loading V2:', e);
