@@ -87,14 +87,12 @@ function renderHero(p) {
       </div>` : ''}
       <h1 class="hero-name">${p.name.split(' ')[0]}<br/><span>${p.name.split(' ')[1]}</span></h1>
       <p class="hero-title">${p.title_es}</p>
-      <p class="hero-desc">${p.bio_es}</p>
-// ... (inside renderHero function)
-      <div class="hero-cta">
+       <p class="hero-desc">${p.bio_es}</p>
+       <div class="hero-cta">
         <a href="index2.html" class="btn-primary" style="text-decoration: none;">Ver CV Vite 2026</a>
         <a class="btn-version cv-download-btn" href="#" download style="text-decoration: none; display: inline-flex; align-items: center;">↓ Descargar CV</a>
         <a class="btn-outline" href="#portfolio">Ver proyectos →</a>
       </div>
-// ...
 
     </div>
     <div class="hero-right">
